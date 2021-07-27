@@ -1,0 +1,81 @@
+
+//El programa da la bienvenida al usuario
+
+alert("*******BIENVENIDOS A LA CALCULADORA DE JAVASCRIPT********");
+
+//Se pide un nombre y apellidos al usuario para que el programa le identifique y se concatena
+var nombre=prompt("Escribe tu nombre");
+var apellido=prompt("Escribe tu apellido");
+let espacio=" ";
+nombreCompleto=nombre+espacio+apellido;
+
+
+//Saludo al usuario
+const saludo="Hola";
+alert(saludo+espacio+nombreCompleto);
+
+/*Se pide al usuario la entrada de números para realizar operaciones y se pasan los datos de
+cadena de caracteres a enteros para poder realizar operaciones*/
+
+let numero1=parseInt(prompt("Seleccione un número para calcular"));
+let numero2=parseInt(prompt("Seleccione otro número para calcular"));
+
+
+
+/*Se pasan los datos a float (decimal) para realizar la división y que salgan los decimales
+de la operación*/
+
+var numero1Decimal=parseFloat(numero1);
+var numero2Decimal=parseFloat(numero2);
+var contador=0;
+
+//El usuario escoge un operador y se procede a hacer la operación correspondiente
+while(contador<6){
+    let operador=prompt("Seleccione un operador");
+    switch(operador){
+        case "+":
+
+            let suma=numero1+numero2;
+            console.log("SUMA: ");
+            alert("La suma total de ambos números es= "+suma);
+            contador++;
+            break;
+        case "-":
+
+            let resta=numero1-numero2;
+            console.log("RESTA: ");
+            alert("La resta de ambos números es= "+resta);
+            contador++;
+            break;
+        case "*":
+
+            let multiplica=numero1*numero2;
+            console.log("MULTIPLICACIÓN: ");
+            alert("La multiplicación de ambos números es "+multiplica);
+            contador++;
+            break;
+        case "/":
+
+            let divide=numero1Decimal/numero2Decimal;
+            console.log("DIVISIÓN: ");
+            alert("La división de ambos números es "+divide);
+            contador++;
+            break;
+        case "%":
+
+            let resto=Math.round(numero1Decimal%numero2Decimal);
+            console.log("RESTO: ");
+            alert("El resto de la división de ambos números es "+resto);
+            contador++;
+            break;
+        default:
+            alert("No se encuentra el operador escodigo,disculpe las molestias");
+            contador++;
+    }
+}   
+
+
+//El programa se despide del usuario con una alerta
+
+alert("**********************HASTA OTRA*********************")
+
