@@ -1,0 +1,311 @@
+//CLASE 1 -Las bases
+
+
+DECLARACIÓN DE VARIABLES: Se utiliza var o let para declarar una variable. En caso de que sea constante o estática se usa const.
+
+//En los códigos antiguos se usaba var para declarar la variable
+
+//let se usa para declarar las variables que puede variar
+let nombreVariable2;
+let variableNumerica;
+
+var variableTexto;
+
+//declaración de variable numérica
+variableNumerica=5;
+
+//declaración de variable de cadena de caracteres con comilla doble
+variableTexto="Mi texto";
+
+//declaración de variable de cadena de caracteres con comilla simple
+variableTexto='Mi texto';
+//const se usa para declarar valores constantes
+const LENGUAJE="JAVASCRIPT"
+
+//En este caso tiene declaración y asignación todo en 1
+var numeroA=1;
+
+let numeroB=2;
+
+//Esta variable numérica es estática
+const NUMEROC=3;
+
+
+
+OPERACIONES CON JAVASCRIPT:
+SUMA +
+RESTA -
+MULTIPLICACIÓN *
+DIVISIÓN /
+
+Operadores aritméticos
+Son los utilizados para la realización de operaciones matemáticas simples como la suma, resta o multiplicación. En javascript son los siguientes:
+
++ Suma de dos valores
+- Resta de dos valores, también puede utilizarse para cambiar el signo de un número si lo utilizamos con un solo operando -23
+* Multiplicación de dos valores
+/ División de dos valores
+% El resto de la división de dos números (3%2 devolvería 1, el resto de dividir 3 entre 2)
+++ Incremento en una unidad, se utiliza con un solo operando
+-- Decremento en una unidad, utilizado con un solo operando
+
+Ejemplos
+precio = 128 //introduzco un 128 en la variable precio 
+unidades = 10 //otra asignación, luego veremos operadores de asignación 
+factura = precio * unidades //multiplico precio por unidades, obtengo el valor factura 
+resto = factura % 3 //obtengo el resto de dividir la variable factura por 3 
+precio++ //incrementa en una unidad el precio (ahora vale 129)
+Operadores de asignación
+Sirven para asignar valores a las variables, ya hemos utilizado en ejemplos anteriores el operador de asignación =, pero hay otros operadores de este tipo, que provienen del lenguaje C y que muchos de los lectores ya conocerán.
+
+= Asignación. Asigna la parte de la derecha del igual a la parte de la izquierda. A al derecha se colocan los valores finales y a la izquierda generalmente se coloca una variable donde queremos guardar el dato.
++= Asignación con suma. Realiza la suma de la parte de la derecha con la de la izquierda y guarda el resultado en la parte de la izquierda.
+-= Asignación con resta
+*= Asignación de la multiplicación
+/= Asignación de la división
+%= Se obtiene el resto y se asigna
+
+Ejemplos
+ahorros = 7000 //asigna un 7000 a la variable ahorros 
+ahorros += 3500 //incrementa en 3500 la variable ahorros, ahora vale 10500 
+ahorros /= 2 //divide entre 2 mis ahorros, ahora quedan 5250
+En el siguiente artículo seguiremos conociendo otros de los operadores de Javascript: Operadores de cadenas, operadores lógicos y operadores condicionales.
+
+Operadores de cadenas
+Las cadenas de caracteres, o variables de texto, también tienen sus propios operadores para realizar acciones típicas sobre cadenas. Aunque javascript sólo tiene un operador para cadenas se pueden realizar otras acciones con una serie de funciones predefinidas en el lenguaje que veremos más adelante.
+
++ Concatena dos cadenas, pega la segunda cadena a continuación de la primera.
+
+Ejemplo
+cadena1 = "hola" 
+cadena2 = "mundo" 
+cadenaConcatenada = cadena1 + cadena2 //cadena concatenada vale "holamundo"
+Un detalle importante que se puede ver en este caso es que el operador + sirve para dos usos distintos, si sus operandos son números los suma, pero si se trata de cadenas las concatena. Esto pasa en general con todos los operadores que se repiten en el lenguaje, javascript es suficientemente listo para entender que tipo de operación realizar mediante una comprobación de los tipos que están implicados en élla.
+
+Un caso que resultaría confuso es el uso del operador + cuando se realiza la operación con operadores texto y numéricos entremezclados. En este caso javascript asume que se desea realizar una concatenación y trata a los dos operandos como si de cadenas de caracteres se trataran, incluso si la cadena de texto que tenemos fuese un número. Esto lo veremos más fácilmente con el siguiente ejemplo.
+
+miNumero = 23 
+miCadena1 = "pepe" 
+miCadena2 = "456" 
+resultado1 = miNumero + miCadena1 //resultado1 vale "23pepe" 
+resultado2 = miNumero + miCadena2 //resultado2 vale "23456" 
+miCadena2 += miNumero //miCadena2 ahora vale "45623"
+Como hemos podido ver, también en el caso del operador +=, si estamos tratando con cadenas de texto y números entremezclados, tratará a los dos operadores como si fuesen cadenas.
+
+Nota: Como se puede haber imaginado, faltan muchas operaciones típicas a realizar con cadenas, para las cuales no existen operadores. Es porque esas funcionalidades se obtienen a través de la clase String de Javascript, que veremos más adelante.
+Operadores lógicos
+Estos operadores sirven para realizar operaciones lógicas, que son aquellas que dan como resultado un verdadero o un falso, y se utilizan para tomar decisiones en nuestros scripts. En vez de trabajar con números, para realizar este tipo de operaciones se utilizan operandos boleanos, que conocimos anteriormente, que son el verdadero (true) y el falso (false). Los operadores lógicos relacionan los operandos boleanos para dar como resultado otro operando boleano, tal como podemos ver en el siguiente ejemplo.
+
+Si tengo hambre y tengo comida entonces me pongo a comer
+
+Nuestro programa Javascript utilizaría en este ejemplo un operando boleano para tomar una decisión. Primero mirará si tengo hambre, si es cierto (true) mirará si dispongo de comida. Si son los dos ciertos, se puede poner a comer. En caso de que no tenga comida o que no tenga hambre no comería, al igual que si no tengo hambre ni comida. El operando en cuestión es el operando Y, que valdrá verdadero (true) en caso de que los dos operandos valgan verdadero.
+
+Nota: Para no llevarnos a engaño, cabe decir que los operadores lógicos pueden utilizarse en combinación con tipos de datos distintos de los boleanos, pero en este caso debemos utilizarlos en expresiones que los conviertan en boleanos. En el siguiente grupo de operadores que vamos a tratar en este artículo hablaremos sobre los operadores condicionales, que se pueden utilizar junto con los operadores lógicos para realizar sentencias todo lo complejas que necesitemos. Por ejemplo:
+if (x==2 && y!=3){
+   //la variable x vale 2 y la variable y es distinta de tres
+}
+En la expresión condicional anterior estamos evaluando dos comprobaciones que se relacionan con un operador lógico. Por una parte x==2 devolverá un true en caso que la variable x valga 2 y por otra, y!=3 devolverá un true cuando la variable y tenga un valor distinto de 3. Ambas comprobaciones devuelven un boleano cada una, que luego se le aplica el operador lógico && para comprobar si ambas comprobaciones se cumplieron al mismo tiempo.
+
+Sobra decir que, para ver ejemplos de operadores condicionales, necesitamos aprender estructuras de control como if, a las que no hemos llegado todavía.
+! Operador NO o negación. Si era true pasa a false y viceversa.
+&& Operador Y, si son los dos verdaderos vale verdadero.
+|| Operador O, vale verdadero si por lo menos uno de ellos es verdadero.
+
+Ejemplo
+miBoleano = true 
+miBoleano = !miBoleano //miBoleano ahora vale false 
+tengoHambre = true 
+tengoComida = true 
+comoComida = tengoHambre && tengoComida
+Operadores condicionales
+Sirven para realizar expresiones condicionales todo lo complejas que deseemos. Estas expresiones se utilizan para tomar decisiones en función de la comparación de varios elementos, por ejemplo si un numero es mayor que otro o si son iguales.
+
+Nota: Por supuesto, los operadores condicionales sirven también para realizar expresiones en las que se comparan otros tipos de datos. Nada impide comparar dos cadenas, para ver si son iguales o distintas, por ejemplo. Incluso podríamos comparar boleanos.
+Los operadores condicionales se utilizan en las expresiones condicionales para tomas de decisiones. Como estas expresiones condicionales serán objeto de estudio más adelante será mejor describir los operadores condicionales más adelante. De todos modos aquí podemos ver la tabla de operadores condicionales.
+
+== Comprueba si dos valores son iguales
+!= Comprueba si dos valores son distintos
+> Mayor que, devuelve true si el primer operando es mayor que el segundo
+< Menor que, es true cuando el elemento de la izquierda es menor que el de la derecha
+>= Mayor igual
+<= Menor igual
+
+Veremos ejemplos de operadores condicionales cuando expliquemos estructuras de control, como la condicional if.
+
+De manera adicional, en este texto veremos un asunto de bastante importancia en la programación en general, que es la precedencia de operadores, que debemos tener en cuenta siempre que utilicemos diversos operadores en una misma expresión, para que se relacionen entre ellos y se resuelvan de la manera habíamos planeado.
+
+Operadores a nivel de bit
+Estos son muy poco corrientes y es posible que nunca los llegues a utilizar. Su uso se realiza para efectuar operaciones con ceros y unos. Todo lo que maneja un ordenador son ceros y unos, aunque nosotros utilicemos números y letras para nuestras variables en realidad estos valores están escritos internamente en forma de ceros y unos. En algunos caso podremos necesitar realizar operaciones tratando las variables como ceros y unos y para ello utilizaremos estos operandos. En este manual se nos queda un poco grande realizar una discusión sobre este tipo de operadores, pero aquí podréis ver estos operadores por si algún día os hacen falta.
+
+& Y de bits
+^ Xor de bits
+| O de bits
+<< >> >>> >>>= >>= <<= Varias clases de cambios
+
+Precedencia de los operadores
+La evaluación de una sentencia de las que hemos visto en los ejemplos anteriores es bastante sencilla y fácil de interpretar, pero cuando en una sentencia entran en juego multitud de operadores distintos puede haber una confusión a la hora de interpretarla y dilucidar qué operadores son los que se ejecutan antes que otros. Para marcar unas pautas en la evaluación de las sentencias y que estas se ejecuten siempre igual y con sentido común existe la precedencia de operadores, que no es más que el orden por el que se irán ejecutando las operaciones que ellos representan. En un principio todos los operadores se evalúan de izquierda a derecha, pero existen unas normas adicionales, por las que determinados operadores se evalúan antes que otros. Muchas de estas reglas de precedencia están sacadas de las matemáticas y son comunes a otros lenguajes, las podemos ver a continuación.
+
+() [] . Paréntesis, corchetes y el operador punto que sirve para los objetos
+! - ++ -- negación, negativo e incrementos
+* / % Multiplicación división y módulo
++- Suma y resta
+<< >> >>> Cambios a nivel de bit
+< <= > >= Operadores condicionales
+== != Operadores condicionales de igualdad y desigualdad
+& ^ | Lógicos a nivel de bit
+&& || Lógicos boleanos
+= += -= *= /= %= <<= >>= >>>= &= ^= != Asignación
+
+En los siguientes ejemplos podemos ver cómo las expresiones podrían llegar a ser confusas, pero con la tabla de precedencia de operadores podremos entender sin errores cuál es el orden por el que se ejecutan.
+
+
+12 * 3 + 4 - 8 / 2 % 3
+En este caso primero se ejecutan los operadores * / y %, de izquierda a derecha, con lo que se realizarían estas operaciones. Primero la multiplicación y luego la división por estar más a la izquierda del módulo.
+
+36 + 4 - 4 % 3
+Ahora el módulo.
+
+36 + 4 - 1
+Por último las sumas y las restas de izquierda a derecha.
+
+40 - 1
+Lo que nos da como resultado el valor siguiente.
+
+39
+De todos modos, es importante darse cuenta que el uso de los paréntesis puede ahorrarnos muchos quebraderos de cabeza y sobretodo la necesidad de sabernos de memoria la tabla de precedencia de los operadores. Cuando veamos poco claro el orden con el que se ejecutarán las sentencias podemos utilizarlos y así forzar que se evalúe antes el trozo de expresión que se encuentra dentro de los paréntesis.
+
+Para acabar con el tema de operadores nos queda por ver un último operador un tanto especial, llamado typeof.
+
+
+
+
+
+EJEMPLOS DE OPERACIONES CON JAVASCRIPT:
+
+//Suma de dos números (1+2=3)
+
+let resultadoSuma=numeroA+numeroB;
+
+//Resta de dos números (2-1=1)
+let resultadoResta=numeroB-numeroA;
+
+//Producto de dos números (2*3=6)
+let resultadoProducto=numeroB*NUMEROC;
+
+
+
+
+
+OPERACIONES CON CADENAS DE CARACTERES:
+
+//Ahora vemos operaciones de cadena de caracteres
+var textoA="CODER";
+let textoB="HOUSE";
+
+const BLANCO=" ";
+
+//Concatenar textoA y textoB ("CODER" + "HOUSE" ="CODERHOUSE")
+
+let resultadoA=textoA+textoB;
+
+//Concatenar textoB y 1
+let resultadoB=textoB+1;
+
+//Concatenar textoA,BLANCO Y textoB ("CODER +"HOUSE"="CODER HOUSE")
+
+let resultadoC=textoA+BLANCO+textoB;
+
+
+
+
+
+
+EJEMPLOS DE DECLARACIÓN DE VARIABLES:
+
+/*Ahora
+veremos
+las variables*/
+
+//Declarar e inicializar variables
+
+var nombre="Jonathan";
+
+var apellido="Gonzalez";
+const espacio=" ";
+
+//Concatenación Jonathan Gonzalez
+var nombreCompleto=nombre+espacio+apellido;
+
+//Suma con números
+let edad=45;
+let edad2=34;
+const PI=3.1416;
+//sumaTotal=79
+let sumaTotal=edad+edad2;
+
+let calculo=edad*PI;
+
+
+
+
+
+SALIDA DE DATOS: CONSOLE.LOG Y ALERT
+
+alert() muestra una ventana con el mensaje encima del navegador y no te permite continuar hasta pulsar en el botón aceptar.
+
+console.log() envía un mensaje a la consola del navegador sin interrumpir el funcionamiento de la web. Atención esta función no funciona en todos los navegadores.
+Para ver la consola del navegador en Chrome hay que pulsar F12 o ir al menú herramientas->herramientas de desarrollo
+
+console.log("La suma de las edades es: "+sumaTotal);
+//prompt se usa para pedir datos al usuario y se almacenan en una variable, es un dato de entradauy
+int datos=prompt("Introduce datos");
+let equipoFutbol=prompt("Ingresa tu equipo favorito");
+
+//console.log y alert son salidas de datos
+//console.log imprime mensajes
+console.log("Mensaje de prueba");
+
+//alert muestra un mensajes, es un dato de salida
+console.log("El nombre completo es: "+nombreCompleto);
+alert(nombreCompleto);
+
+
+
+
+
+ENTRADA DE DATOS: PROMPT
+Mostrar un cuadro de solicitud que pregunte al usuario por su nombre y envíe un mensaje:
+
+var person = prompt("Please enter your name", "Harry Potter");
+
+if (person != null) {
+  document.getElementById("demo").innerHTML =
+  "Hello " + person + "! How are you today?";
+}
+
+
+El método prompt() muestra un cuadro de diálogo que solicita al visitante la entrada.
+
+A menudo se utiliza un cuadro de solicitud si desea que el usuario escriba un valor antes de entrar en una página.
+
+Nota: Cuando aparece un cuadro de solicitud, el usuario tendrá que hacer clic en "Aceptar" o "Cancelar" para continuar después de ingresar un valor de entrada. No haga un uso excesivo de este método, ya que impide que el usuario tenga acceso a otras partes de la página hasta que se cierre el cuadro.
+
+El método prompt() devuelve el valor de entrada si el usuario hace clic en "Aceptar". Si el usuario hace clic en "cancelar", el método devuelve null.
+
+sintaxis
+prompt(text, defaultText)
+
+
+
+
+CONVERTIR STRING A NUMERO O DECIMAL: PARSEINT O PARSEFLOAT
+//parseInt() convertir un string a numeroA
+//en este caso está convirtiendo el String a valor numérico
+let anioNacimiento=parseInt(prompt("Ingresa el año de tu nacimiento"));
+let edadUsuario=2021-anioNacimiento;
+alert("Tu edad es "+edadUsuario);
+
+//Con parseFloat se pasa el String a decimal
+
+
+
