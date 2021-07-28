@@ -28,17 +28,17 @@ tener en cuenta que el número de alumnos de cada grupo no tiene por que ser el 
 //Se va a hacer un recuento de las notas de los alumnos y el grupo al que pertenecen hasta que se introduzca -1, en ese momento el bucle para
 
 //Variables del grupo A
-var contadorA=0;
-var contador_aprobadosA=0;
-var contador_suspensosA=0;
+let contadorA=0;
+let contador_aprobadosA=0;
+let contador_suspensosA=0;
 var porcentajeAprobados_A=0;
 var porcentajeSuspensos_A=0;
 let aprobadosA=true;
 let suspensosA=true;
 //Variables del grupo B
-var contadorB=0;
-var contador_aprobadosB=0;
-var contador_suspensosB=0;
+let contadorB=0;
+let contador_aprobadosB=0;
+let contador_suspensosB=0;
 var porcentajeAprobados_B=0;
 var porcentajeSuspensos_B=0;
 let aprobadosB=true;
