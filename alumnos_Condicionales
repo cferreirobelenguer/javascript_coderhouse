@@ -1,4 +1,4 @@
-/* 5. Realizar un programa codificado en Java que procese las notas con las calificaciones de los exámenes de
+/* Realizar un programa codificado en Java que procese las notas con las calificaciones de los exámenes de
 la primera evaluación de programación. Se leerá la nota del alumno y el grupo a que pertenece: la letra: A
 o B. El programa leerá notas hasta que el valor introducido sea un -1. El programa mostrará como resultado
 el porcentaje de alumnos aprobados el grupo a y el grupo b , y cantidad de aprobados de a y b. Hay que
