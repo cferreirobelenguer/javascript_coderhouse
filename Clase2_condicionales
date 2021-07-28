@@ -1,0 +1,279 @@
+
+
+//CLASE 2: CONDICIONALES
+
+
+
+//ESTRUCTURA IFF
+//Si bien la estructura if nos permite definir un conjunto de instrucciones a interpretarse cuando algo se cumple, 
+//puede ser necesario definir un código adicional en aquellos casos en que el resultado no es el esperado. 
+//Para estas situaciones, contamos con la estructura if...else, la cual nos permite contar con dos bloques, 
+//como podemos ver el siguiente ejemplo:
+
+if (true){
+    console.log("vas a ver este mensaje");
+}
+
+//SI LA CONDICIÓN ES VERDADERA SE CUMPLE ESTA CONDICIÓN Y SE IMPRIME EL MENSAJE
+
+//Si la condición se cumple  (es decir, si su valor es true) se ejecutan todas las instrucciones
+//que se encuentran dentro de la llave, Si la condición no se cumple(es decir es false) no se ejecuta 
+
+let unNumero = 5
+
+// Con (unNumero == 5) comparamos si unNumero es igual a 5
+if (unNumero == 5){
+    console.log("vas a ver este mensaje");
+}
+
+// Con (unNumero == 6) comparamos si unNumero es igual a 6
+if (unNumero == 6){ 
+    console.log("no vas a ver este mensaje");
+}
+
+//Dado que el bloque que se interpreta es aquel cuya comparación es verdadera, 
+//en este caso la única salida que se visualizará por consola es la que cumple que unNumero es igual a 5.
+
+
+
+
+//ESTRUCTURA IF ELSE
+
+//Si bien la estructura if nos permite definir un conjunto de instrucciones a interpretarse cuando algo se cumple, 
+//puede ser necesario definir un código adicional en aquellos casos en que el resultado no es el esperado. 
+//Para estas situaciones, contamos con la estructura if...else, la cual nos permite contar con dos bloques, 
+//como podemos ver el siguiente ejemplo:
+
+
+let unColor = "Rojo"
+
+// Con (unColor == "Rojo") comparamos si unColor es igual "Rojo"
+if (unColor == "Rojo"){
+    console.log("el color es Rojo");
+}else{
+//La instrucción se interpreta cuando unColor NO es "Rojo"
+    console.log("el color NO es Rojo");
+}
+
+console.log("*******************OTRO EJEMPLO****************************");
+
+
+let nombreUsuario = prompt("Ingresar nombre de usuario");
+
+if (nombreUsuario == "") {
+    alert("No ingresaste el nombre de usuario");
+}
+else {
+    alert("Nombre de usuario ingresado " + nombreUsuario);
+}
+
+
+//Cabe aclarar que en las estructuras condicionales, cuando se detecta que una condición se cumple, 
+//el navegador no interpreta el resto de la estructura. Es decir, si se cumple que unColor es igual a “Rojo”, 
+//se ingresa al primer bloque y el else nunca será leído por el intérprete. 
+
+console.log("*******************OTRO EJEMPLO****************************");
+//En este caso se usa else if cuando hay varias condiciones
+
+let precio = 100.5;
+
+if (precio < 20) {
+    alert("El precio es menor que 20");
+}
+else if (precio < 50) {
+    alert("El precio es menor que 50");
+}
+else if (precio < 100) {
+    alert("El precio es menor que 100");
+}
+else {
+    alert("El precio es mayor que 100");
+}
+
+
+
+
+//VARIABLES BOOLEANAS
+
+//Una variable booleana es aquella que sólo tiene dos valores: es verdadera (true) o falsa (false). 
+//Identificamos a los valores true y false como valores booleanos.
+//Es común emplear variables con valores de este tipo con la intención de usarlas junto  a los condicionales.
+
+let esValida = true;
+let numero   = 10;
+let esMayor5 = (numero > 5); // su valor sera true
+//Se le asigna una condición y si se cumple es true.
+
+
+
+if (esValida) {
+    alert("Es boolean true");
+}
+
+
+
+//VAMOS A PRACTICAR
+
+var colorFavorito=prompt("Ingresa tu color favorito");
+if(colorFavorito=="azul"){
+    alert("El azul también es mi color favorito!!!");
+}else if(colorFavorito=="rojo"){
+    alert("A mi no me gusta el rojo, me gusta el azul");
+}else{
+    alert("Tu color favorito es: "+colorFavorito);
+}
+
+
+
+let numero=35;
+//variable booleana
+let esMayorA20=(numero>20);
+console.log(esMayorA20);
+
+//Nos da true porque número es 35 y es mayor a 20
+
+
+
+//EJEMPLO:
+/* Para ingresar a un juego del parque de diversiones necesitamos saber la altura del que ingresa
+la misma se mide en cm, (solicitamos al usuario la altura en cm),
+Si la altura es menor a 130 cm -Debe ingresar con un adulto
+Si la altura es mayor o igual a 130 cm - Puede ingresar sólo
+Imprimimos un mensaje según la altura ingresada */
+
+alert("Bienvenido al parque de atracciones");
+
+var altura=ParseInt(prompt("Introduce tu altura en cm, por favor"));
+
+if(altura<130){
+    alert("Debe ingresar con un adulto");
+}else if(altura>=130){
+    alert("Puede ingresar sólo");
+}else{
+    alert("La altura introducida no está permitida");
+}
+
+
+//OPERADORES LÓGICOS:
+
+//OPERADORES DE IGUALDAD:
+
+//Operadores de igualdad (==) y (===): sirven para preguntarnos si dos valores o variables son iguales. No obstante, 
+//hay que tener en cuenta que en JS se manejan dos tipo de igualdades: una parcial, 
+//cuando los valores coinciden independientemente del tipo de dato (así 1 == “1” es verdadero, 
+//no importa si 1 en un número y “1” es un string, al tener el mismo valor la igualdad se cumple”) 
+//y otra estricta, la cual es verdadera cuando los valores comparados son idénticos en valor y tipo de dato (es decir, sólo 1 === 1 es verdadero).
+
+//Estrictamente igual significa que sea igual en tipo y en valor:
+
+var num1=121;
+var numUno="121";
+//En este caso son iguales en valor pero no en tipo , ya que uno es de tipo int y otro String
+//Con lo cual en el condicional va a salir falso y se va a imprimir que no son estrictamente iguales en tipo y valor
+
+var sonEstrictamenteIguales = (num1 ===numUno); //va a salir false porque no son iguales en tipo pero si en valor.
+if(sonEstrictamenteIguales){
+    console.log("Son estrictamente iguales(iguales en tipo y valor)");
+}else{
+    console.log("No son estrictamente iguales en tipo y valor");
+}
+
+
+var sonIguales=(num1 == numUno); //va a salir true porque ambos tienen el valor 121, con lo cual si se usa el doble igual
+//va a salir que son iguales porque tienen el mismo valor, pero si se usa el tripe igual al tener que ser igual en tipo y valor dará falso.
+
+console.log("Resultado de sonIguales"+sonIguales);
+
+//OPERADORES DE DESIGUALDAD:
+
+/*Operadores de desigualdad (!=) y (!==): son útiles para determinar que una variable no tiene cierto valor 
+(por ejemplo, para saber que unNumero no es igual a cero). De la misma forma que la igualdad, 
+la desigualdad puede ser parcial o estricta, y en consecuencia 1 != "1" no son distintos,
+ ya que tienen el mismo valor: pero 1 !== "1" si son distintos porque tienen el mismo valor pero diferente tipo de dato.*/
+
+//OPERADORES RELACIONALES
+
+/*Operadores de orden (<),(<=), (>), (>=): su utilidad principal es determinar que un valor numérico es menor o 
+mayor que otro (por ejemplo, 5 < 6 es verdadero pero 8 < 6 es falso). Si queremos incluir al número contra el que 
+estamos comparando, debemos emplear menor o igual, y mayor o igual (en este caso sería 8 <= 8 y 2 >= 2, ambas son verdaderas).*/
+
+
+/*Operadores lógicos (&&),   ||  , (!):  utilizamos los operadores lógicos para comparar valores y/o variables booleanas.  En este caso, el resultado de dichas comparaciones sigue las siguientes reglas según el operador:
+Si usamos && (AND) para comprar dos valores booleanos, la comparación es verdadera sólo si ambos valores son verdaderos, Ejemplo: true && true es verdadero (único caso true al usar el operador AND).
+Si usamos || (OR) para comparar dos valores booleanos, la comparación es falsa si ambos valores son falso, Ejemplo: false || false es falso (único caso false al usar el operador OR)
+Si usamos ! (NOT) en un valor y/o variable booleana, invertimos su valor de verdad, es decir que si el valor es verdadero, con ! lo transformamos en falso, y si es falso, con ! lo transformamos en verdadero, Ejemplo: !true es falso, y !false es verdadero.
+*/
+
+
+//EJEMPLO CON OPERADOR OR ||
+
+if ((colorFavorito=="azul")||(colorFavorito=="Azul")||(colorFavorito=="AZUL")){
+    alert("El azul también es mi color favorito");
+}
+
+//establece dos condiciones si azul es en minúscula o con la primera letra mayúscula
+
+
+/*Condiciones compuestas con && (AND)
+Así como podemos comparar valores booleanos con operadores lógicos, también es posible utilizarlos para construir condiciones compuestas, las cuales nos permiten codificar estructuras condicionales con la potencialidad de comparar más de un valor en una expresión. A continuación veremos un ejemplo de una condición compuesta empleando el operador && AND:
+*/
+
+let nombreIngresado   = prompt("Ingresar nombre");
+let apellidoIngresado = prompt("Ingresar apellido");
+
+if((nombreIngresado !="") && (apellidoIngresado !="")){
+    alert("Nombre: "+nombreIngresado +"\nApellido: "+apellidoIngresado); 
+}else{
+    alert("Error: Ingresar nombre y apellido");
+}
+
+/*El ejemplo anterior permite determinar si las dos entradas solicitadas al usuario (nombreIngresado y apellidoIngresado) fueron cargadas.
+Recordemos que && sólo es verdadero si se cumplen ambas comparaciones, y en este caso nos estamos preguntando si los valores ingresados son distintos de una cadena vacía (“”). Si el usuario ingresa al menos un caracter en ambas entradas, la condición es verdadera; por el contrario, si al menos una de las comparaciones es falsa, la condición siempre será falsa.
+Recordemos que las instrucciones se interpretan de izquierda a derecha, y en el caso de condiciones compuestas, si el intérprete identifica que se emplea && (AND) y el resultado de la primera comparación es falsa (false) , no interpreta la siguiente instrucción en este caso porque sabe que la condición resultante es falsa.
+*/
+
+
+
+/*Condiciones compuestas con  || (OR)
+También podemos utilizar el operador lógico OR para construir condiciones compuestas. A continuación, un ejemplo de dicha implementación:
+*/
+
+let nombreIngresado   = prompt("Ingresar nombre");
+
+if((nombreIngresado == "ANA") || (nombreIngresado =="ana")){
+    alert("El nombre ingresado es Ana"); 
+}else{
+    alert("El nombre ingresado NO ES Ana"); 
+}
+
+/*Recordemos que en JavaScript cuando comparamos una letra con mayúscula y minúscula, el resultado es falso por más que se trate de la misma (por ejemplo: "a" == "A" es falso porque la minúscula es distinta que A mayúscula en valor). Entonces, podemos usar OR para armar condiciones compuestas, que determinan si el nombre ingresado está todo en minúscula o en mayúscula.
+Con OR basta que una comparación sea verdadera (true) para que todo sea verdadero. La condición no se cumpliría si el usuario no ingresa “ANA” ni “ana”.
+Tengamos en cuenta que las instrucciones se interpretan de izquierda a derecha, y en el caso de la condiciones compuestas, si el intérprete identifica que se emplea || (OR) y el resultado de la primera comparación es verdadero  (true), no interpretará la siguiente instrucción, porque sabe que la condición resultante es verdadera.
+*/
+
+/*Combinaciones AND y OR
+También es posible combinar AND y OR para construir condicionales cada vez más específicos. El ejemplo que veremos a continuación valida que el nombre ingresado no sea vacío, y se escriba “EMA” o “ema”:
+*/
+
+let nombreIngresado   = prompt("Ingresar nombre");
+
+if((nombreIngresado !="") && ((nombreIngresado == "EMA") || (nombreIngresado =="ema"))){
+    alert("Hola Ema"); 
+}else{
+    alert("Error: Ingresar nombre valido");
+}
+
+
+
+let usuario=prompt("Ingrese nombre de usuario:");
+let contraseña=prompt("Ingrese contraseña");
+
+//usuario="PEPE" contraseña="1234"
+
+if(((usuario=="PEPE")||(usuario=="pepe"))&&(contraseña=="1234")){
+    console.log("BIENVENIDO AL SISTEMA "+usuario);
+}else{
+    console.log("USUARIO O CONTRASEÑA ERRONEOS!!!");
+
+}
+
