@@ -1,3 +1,5 @@
+//ARCHIVO JAVASCRIPT
+
 
 //El programa da la bienvenida al usuario
 
@@ -78,4 +80,24 @@ while(contador<6){
 //El programa se despide del usuario con una alerta
 
 alert("**********************HASTA OTRA*********************")
+
+
+
+//ARCHIVO HTML
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Caculadora_Javascript</title>
+</head>
+<body>
+    <script src="claseFerreiroBelenguer.js"></script>
+
+</body>
+
+</html>
 
