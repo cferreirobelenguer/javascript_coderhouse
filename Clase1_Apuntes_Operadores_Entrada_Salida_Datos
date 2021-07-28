@@ -3,6 +3,31 @@
 
 DECLARACIÓN DE VARIABLES: Se utiliza var o let para declarar una variable. En caso de que sea constante o estática se usa const.
 
+/*Variables
+Vamos a aprender ahora nuestras primeras palabras reservadas. Los términos a continuación se utilizan para crear elementos con valores asociados, a los cuales los conocemos por el nombre de variables.
+Para crear una variable podemos usar la palabra “var”, seguida por el nombre que quiero especificar para la misma, acompañada de un punto y coma (;), si no vamos a asociar ningún valor al momento de crear la variable.
+También existen otras palabras para crear variables desde la versión ES6 de JavaScript, como “let” que, por así decirlo, es equivalente a “var” en la nueva versión, así como  “const”, la cual se usa para crear una variable cuyo valor no va a cambiar nunca.
+Al proceso de “crear” una variable se le dice “declarar” una variable, mientras que cuando “le damos” un valor a la misma, como en el caso de la variable con nombre “LENGUAJE” estamos “asignando” un valor a la variable.
+Tipos de valores 
+Podemos asociar distintos valores a una variable en JavaScript; vamos a empezar trabajando con números y texto:
+Un valor numérico puede ser entero o decimal; cuando es entero se le dice “integer”, mientras que se lo denomina “float” cuando es decimal. 
+Por otro lado, un texto es un valor compuesto por uno o más caracteres entre comillas simples o dobles, y se lo llama “cadena de caracteres” o “string”.
+Es importante aclarar que en JavaScript las variables pueden guardar cualquier tipo de valores. Esto significa que si asignar primero un número no impide luego asignar un string a la misma variable. A esta característica en los lenguajes de programación se la llama “tipado dinámico”, e implica que las variables pueden guardar cualquier valor, sin que sea necesario especificar qué tipo de dato contiene la variable en la declaración de la misma.
+*/
+
+<script>
+    var   numeroA = 1;
+    let   numeroB = 2;
+    const NUMEROC = 3;
+    //Suma  de dos números (1 + 2 = 3)
+    let resultadoSuma  = numeroA + numeroB;
+    //Resta de dos números (2 - 1 = 1)
+    let resultadoResta = numeroB - numeroA;
+    //Producto de dos números (2 * 3 = 6)
+    let resultadoProducto = numeroB * NUMEROC;
+</script>
+
+
 //En los códigos antiguos se usaba var para declarar la variable
 
 //let se usa para declarar las variables que puede variar
@@ -252,9 +277,12 @@ let calculo=edad*PI;
 SALIDA DE DATOS: CONSOLE.LOG Y ALERT
 
 alert() muestra una ventana con el mensaje encima del navegador y no te permite continuar hasta pulsar en el botón aceptar.
+/*La segunda forma de mostrar al usuario el resultado de una variable es mediante la instrucción alert(), la cual hace aparecer un cuadro de texto con el valor asignado de una variable, o un valor cualquiera especificado entre los paréntesis.*/
 
 console.log() envía un mensaje a la consola del navegador sin interrumpir el funcionamiento de la web. Atención esta función no funciona en todos los navegadores.
 Para ver la consola del navegador en Chrome hay que pulsar F12 o ir al menú herramientas->herramientas de desarrollo
+/*Si queremos mostrar el resultado de una variable tenemos dos formas de hacerlo. La primera, muy útil para el programador, es utilizar la instrucción console.log(), la cual permite visualizar en la consola del navegador el valor asignado, una variable, o un valor cualquiera especificado entre los paréntesis. */
+
 
 console.log("La suma de las edades es: "+sumaTotal);
 //prompt se usa para pedir datos al usuario y se almacenan en una variable, es un dato de entradauy
@@ -274,6 +302,14 @@ alert(nombreCompleto);
 
 
 ENTRADA DE DATOS: PROMPT
+
+/*Prompt
+La primera es la instrucción prompt(), con la cual podemos solicitar un dato al usuario. Cuando la usamos, se visualiza en el navegador un cuadro de texto que pide un dato. Se busca asignar el valor ingresado por prompt() a una variable. Dicho valor que el usuario escribe es siempre una cadena de caracteres, por lo cual es necesario transformarlo a número si queremos hacer cálculos con él. 
+
+El usuario puede ingresar cualquier valor en este cuadro, y no puede limitarse el tipo de valor ingresado.  A los datos que ingresa mediante prompt se los conoce con el nombre de “entradas”, porque son datos que “ingresan” a la aplicación por la acción del usuario para ser procesados.
+
+
+*/
 Mostrar un cuadro de solicitud que pregunte al usuario por su nombre y envíe un mensaje:
 
 var person = prompt("Please enter your name", "Harry Potter");
