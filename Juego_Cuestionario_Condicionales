@@ -1,0 +1,76 @@
+
+
+
+//DOCUMENTO HTML
+
+<!--JUEGO CUESTIONARIO QUE SUMA DOS PUNTOS SI ACIERTAS Y PIERDES UN PUNTO SI FALLAS-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Juego</title>
+</head>
+
+<body>
+<script src="juego.js"></script>
+</body>
+</html>
+
+
+//DOCUMENTO JAVASCRIPT
+
+/*JUEGO CUESTIONARIO QUE SUMA DOS PUNTOS SI ACIERTAS Y PIERDES UN PUNTO SI FALLAS*/
+
+
+// JavaScript Document
+
+//JUEGO
+let contadorPuntos=0;
+let preg1=prompt("De qué color es la bandera Argentina\n1-Roja y Amarilla \n2-Celeste y Blanca");
+if(preg1=="1"){
+	alert("Respuesta equivocada, pierde 1 punto");
+	contadorPuntos--;
+}else if(preg1=="2"){
+	alert("Excelente, sumas 2 puntos");
+	contadorPuntos+=2;
+}else{
+	alert("Respuesta inválida, no suma puntos");
+}
+alert("Tienes "+contadorPuntos+" puntos");
+
+let preg2=prompt("En qué equipo español juega Messi?\n1-Barcelona \n2-Juventus");
+if(preg2=="1"){
+	alert("Excelente -Sumas dos puntos");
+	contadorPuntos+=2;
+}else if(preg2=="2"){
+	alert("Respuesta equivocada -Pierde un punto");
+	contadorPuntos--;
+}else{
+	alert("Respuesta inválida, no suma puntos");
+}
+
+alert("Tienes "+contadorPuntos+" puntos");
+
+let preg3=prompt("Cuántos balones de oro tiene Messi?\n-9 balones\n-6balones");
+if(preg3=="1"){
+	alert("Respuesta equivocada -Pierde un punto");
+	contadorPuntos--;
+}else if(preg3=="2"){
+	alert("Excelente -Sumas dos puntos");
+	contadorPuntos+=2;
+}else{
+	alert("Respuesta inválida no suma puntos");
+}
+alert("Tienes "+contadorPuntos+" puntos");
+
+//EVALUAR PUNTUAJE
+
+if(contadorPuntos==6){
+	alert("FELICITACIONES ACERTASTE TODAS LAS PREGUNTAS!");
+}else if((contadorPuntos>0)&&(contadorPuntos<6)){
+	alert("DEBES MEJORAR UN POCO AÚN");
+}else{
+	alert("SIGUE PARTICIPANDO");
+}
+
