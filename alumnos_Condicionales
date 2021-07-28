@@ -1,0 +1,131 @@
+/* 5. Realizar un programa codificado en Java que procese las notas con las calificaciones de los exámenes de
+la primera evaluación de programación. Se leerá la nota del alumno y el grupo a que pertenece: la letra: A
+o B. El programa leerá notas hasta que el valor introducido sea un -1. El programa mostrará como resultado
+el porcentaje de alumnos aprobados el grupo a y el grupo b , y cantidad de aprobados de a y b. Hay que
+tener en cuenta que el número de alumnos de cada grupo no tiene por que ser el mismo.*/
+
+//DOCUMENTO HTML CON EL SCRIPT DE JAVASCRIPT
+
+<!Doctype html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+
+</head>
+<body>
+<script src="clase2CarolinaFerreiro.js"></script>
+</body>
+
+</html>
+
+
+
+//DOCUMENTO JAVASCRIPT
+
+
+
+//Se va a hacer un recuento de las notas de los alumnos y el grupo al que pertenecen hasta que se introduzca -1, en ese momento el bucle para
+
+//Variables del grupo A
+var contadorA=0;
+var contador_aprobadosA=0;
+var contador_suspensosA=0;
+var porcentajeAprobados_A=0;
+var porcentajeSuspensos_A=0;
+let aprobadosA=true;
+let suspensosA=true;
+//Variables del grupo B
+var contadorB=0;
+var contador_aprobadosB=0;
+var contador_suspensosB=0;
+var porcentajeAprobados_B=0;
+var porcentajeSuspensos_B=0;
+let aprobadosB=true;
+let suspensosB=true;
+
+//Variables de nota y grupo, contador del while
+let grupo;
+let nota;
+let contador;
+
+
+alert("BASE DE DATOS DE ALUMNOS DE UN INSTITUTO");
+
+while(nota!=-1){
+    nota=parseInt(prompt("Introduce la nota del alumno"));
+    grupo=prompt("Introduce grupo al que pertenece el alumno [A o B]");
+    
+    if ((grupo=="A")||(grupo=="a")){
+        contadorA++;
+        if (nota<5){
+            alert("El alumno está suspenso: "+suspensosA);
+            contador_suspensosA++;
+           
+        }else if(nota>=5){
+            alert("El alumno está aprobado: "+aprobadosA);
+            contador_aprobadosA++;
+        }
+    }else if ((grupo=="B")||(grupo=="b")){
+       contadorB++;
+        if (nota<5){
+            alert("El alumno está suspenso: "+suspensosB);
+            contador_suspensosB++;
+        }else if(nota>=5){
+            alert("El alumno está aprobado: "+aprobadosB);
+            contador_aprobadosB++;
+        }
+    }else{
+        alert("El dato introducido no es correcto");
+    }
+    contador++;
+}
+        
+    
+
+
+    //Recuento total de datos del grupo A, total de aprobados y su porcentaje y total de suspensos y su porcentaje
+     console.log("Datos del grupo A:");
+
+    //Datos aprobados A
+   
+    //Se calcula el número de aprobados en el grupo A
+    alert("El total de aprobados en el grupo A es= "+contador_aprobadosA);
+
+    //Se calcula el porcentaje de aprobados en el grupo A con respecto al total de alumnos del grupo A y se pasa a decimal su resultado.
+    porcentajeAprobados_A=parseFloat(contador_aprobadosA*100/contadorA);
+    alert("El porcentaje de aprobados en el grupo A es= "+porcentajeAprobados_A+" % ");
+
+    //Datos suspensos A
+
+    //Se calcula el número de suspensos en el grupo A
+    alert("El total de suspensos en el grupo A es= "+contador_suspensosA);
+
+    //Se calcula el porcentaje de suspensos en el grupo A con respecto al total de alumnos del grupo A y se pasa a decimal su resultado.
+    porcentajeSuspensos_A=parseFloat(contador_suspensosA*100/contadorA);
+    alert("El porcentaje de suspensos en el grupo A es= "+porcentajeSuspensos_A+" % ");
+    
+
+    //Recuento total de datos del grupo B, total de aprobados y su porcentaje y total de suspensos y su porcentaje
+    console.log("Datos del grupo B:");
+
+    //Datos aprobados B
+
+    //Se calcula el número de aprobados en el grupo B
+    alert("El total de aprobados en el grupo B es= "+contador_aprobadosB);
+
+    //Se calcula el porcentaje de aprobados en el grupo B con respecto al total de alumnos del grupo B y se pasa a decimal su resultado.
+    porcentajeAprobados_B=parseFloat(contador_aprobadosB*100/contadorB);
+    alert("El porcentaje de aprobados en el grupo B es= "+porcentajeAprobados_B+" % ");
+
+    //Datos suspensos B
+
+    //Se calcula el número de suspensos en el grupo B
+    alert("El total de suspensos en el grupo B es= "+contador_suspensosB);
+
+    //Se calcula el porcentaje de suspensos en el grupo B con respecto al total de alumnos del grupo B y se pasa a decimal su resultado.
+    porcentajeSuspensos_B=parseFloat(contador_suspensosB*100/contadorB);
+    alert("El porcentaje de suspensos en el grupo B es= "+porcentajeSuspensos_B+" % ");
+
+    alert("GRACIAS POR CONSULTAR NUESTRAS BASES DE DATOS, ¡HASTA OTRA!")
+
