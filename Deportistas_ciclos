@@ -1,0 +1,88 @@
+Introduce marcas de un deportista hasta que el usuario teclé 0 y se para el ciclo, 
+Si las marcas son menores o igual de 25 mandamos un mensaje de felicitaciones por su clasificación y se suman dos puntos,en caso contrario
+mandamos un mensaje de que tiene que mejorar y se descuenta 1 punto (Se muestran mientras por consola las marcas).
+Calculamos el promedio y si es menor o igual de 25 el deportista está clasificado y si no no está clasificado y tiene que mejorar.
+
+//DOCUMENTO HTML
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>deportistas</title>
+    </head>
+    <body>
+        <script src="clase3CarolinaFerreiroBelenguer.js"></script>
+    </body>
+</html>
+
+//DOCUMENTO JAVASCRIPT
+
+
+/*Introduce marcas de un deportista hasta que el usuario teclé 0 y se para el ciclo, 
+Si las marcas son menores o igual de 25 mandamos un mensaje de felicitaciones por su clasificación y se suman dos puntos,en caso contrario
+mandamos un mensaje de que tiene que mejorar y se descuenta 1 punto (Se muestran mientras por consola las marcas).
+Calculamos el promedio y si es menor o igual de 25 el deportista está clasificado y si no no está clasificado y tiene que mejorar.
+ */
+ 
+ 
+ //Declaración de variables
+let marcas;
+let contador=0;
+let contadorPuntos=0;
+let sumaMarcas=0;
+var promedio;
+//Se pide al usuario el nombre y apellidos del deportista y se concatena el resultado en la variable alumno
+let nombre=prompt("Introduzca nombre del deportista");
+let apellidos=prompt("Introduzca apellidos del deportista");
+
+let deportista=nombre+" "+apellidos;
+
+//Se muestra el resultado por consola 
+alert("Usted ha elegido al deportista "+deportista);
+ 
+ 
+ //Se pide al usuario que introduzca las marcas del deportista y que si son distintas a 0 las almacene en un arreglo, sino se acaba el ciclo.
+ marcas=parseFloat(prompt("Introduce la marca del deportista"));
+ console.log("Marcas de la deportista:");
+		 while(marcas!=0){
+			contador++;
+			sumaMarcas+=marcas;	
+				if(marcas<=25){
+					
+					contadorPuntos+=2;
+					//Se muestran por consola las marcas del deportista
+					console.log("Marca: "+marcas+" Puntos: "+contadorPuntos);
+					
+					alert("Felicitaciones por su marca, tiene "+contadorPuntos+" puntos");
+					
+					
+				}else if(marcas>25){
+					contadorPuntos--;
+					//Se muestran por consola las marcas del deportista
+					console.log("Marca: "+marcas+" Puntos: "+contadorPuntos);
+					alert("Tiene que mejorar en sus marcas, se le descuenta un punto y tiene "+contadorPuntos+" puntos");
+					
+				}else{
+					
+					alert("El dato introducido no es correcto");
+				}
+				
+			marcas=parseFloat(prompt("Introduce la marca del deportista"));
+			if(marcas==0){
+				alert("Fin de recogida de datos");
+			}
+			
+		}
+				
+//Calulamos promedio 
+promedio=parseFloat(sumaMarcas/contador);
+
+
+//Si promedio es menor o igual de 25 no está clasificado, en caso contrario debe mejorar
+alert("La media de las marcas del deportista "+deportista+ " es "+promedio);
+if(promedio<=25){
+	alert("El deportista está clasificado");
+}else{
+	alert("El deportista  no está clasificado, debe mejorar sus marcas para entrar en la clasificación");
+	}
+ 
