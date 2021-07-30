@@ -1,0 +1,49 @@
+/*SE MUESTRA UN MENÚ CON UNOS DISPOSITIVOS Y EL USUARIO TIENE QUE ELEGIR 4 VECES UNA OPCIÓN, SE MUESTRA LA DESCRIPCIÓN DE CADA UNO*/
+
+//DOCUMENTO HTML
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+<script src="switch.js"></script>
+</body>
+
+//DOCUMENTO JS
+
+
+
+var contador=0;
+console.log("1.Impresora Samsung Laser");
+console.log("2.Mouse Genius usb");
+console.log("3.Resma A4 500 hojas");
+console.log("4.Auriculares Philips in-ear");
+while(contador!=4){
+ let codigo=parseInt(prompt("Introduce un código"));   
+switch(codigo){
+    case 1:
+        alert("Usted ha elegido Impresora Samsung Laser");
+        console.log("Impresora doble función, con escáner")
+        contador++;
+    break;
+    case 2:
+        alert("Usted ha elegido Mouse Genius usb");
+        console.log("Ratón óptico inhalámbrico");
+        contador++;
+    break;
+    case 3:
+        alert("Usted ha elegido Resma A4 500 hojas");
+        console.log("Magnífico papel fotográfico");
+        contador++;
+    break;
+    case 4:
+        alert("Usted ha elegido Auriculares Philips in-ear");
+        console.log("Auriculares inhalámbricos última tecnología");
+        contador++;
+    break;
+    default:
+        alert("Error, la opción seleccionada no se encuentra en nuestras bases de datos");
+        contador++;
+    }
+}
+
