@@ -209,6 +209,8 @@ sumar(1, 2);
 mostrar(resultado); 
 
 
+
+
 Resultado de la función
 
 En el ejemplo anterior, usamos una variable resultado para asignar un nuevo valor a la misma cada vez que llamamos la función; pero si necesito obtener un valor al momento de llamar la función, en vez de utilizar un variable se recomienda emplear la palabra reservada return sobre el valor que quiero recuperar de la función, como por ejemplo:
@@ -291,6 +293,25 @@ const resta = function (a, b) { return a - b };
 console.log(suma(15,20));
 console.log(resta(15,5));
 
+ EJEMPLO DE VARIABLES LOCALES Y ANÓNIMAS:
+ 
+ let numGlobal89;
+
+        function probarScopes(){
+            let numLocal=102;
+            //SE PUEDE LEER NUMLOCAL PORQUE ESTÁ DECLARADA DENTRO DE LA FUNCIÓN, ES UNA VARIABLE LOCAL
+            console.log("La variable numLocal dentro de la función es: "+numLocal);
+            //SE PUEDE LEER NUMGLOBAL PORQUE SE DECLARA FUERA Y TIENE ALCANCE GLOBAL
+            console.log("La variable numGlobal dentro de la función es: "+numGlobal);
+        }
+        
+        let valordeRetorno=probarScopes();
+        alert(valordeRetorno);
+ 
+ 
+ 
+ 
+ 
  
  
 Pero ¿por qué necesito una función anónima si tengo las funciones normales? 
