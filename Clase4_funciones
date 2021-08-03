@@ -14,6 +14,8 @@ function saludar() {
     console.log("¡Hola estudiantes!");
 }
 
+Normalmente las funciones incluyen un verbo en infinitivo, eso es una muy buena práctica.
+
  
  
  
@@ -27,10 +29,83 @@ Paréntesis (): colocados luego del nombre de la función, nos permiten recibir 
 
 Bloque {}: al igual que con las estructuras, todas las instrucciones que definimos dentro del bloque serán interpretadas al momento de utilizar la función. Una vez definida la función, podemos emplearla en cualquier parte del programa; en la siguiente sección analizaremos cómo podemos hacerlo.
 
+
+
+
+
 Funciones: llamada
 
 Para utilizar funciones previamente definidas en el script, utilizamos su nombre y tipeamos los paréntesis; al hacer esto, en dicha instrucción se interpreta el bloque correspondiente a la función. A este empleo de la función, se lo conoce como llamada o invocación de la función:
 saludar();
+
+
+
+EJEMPLO:
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+</head>
+<body>
+    <script>
+    //FUNCIONES CON PARÁMETROS
+        function sumar(primerNumero,segundoNumero){
+
+            let resultado=0;
+            resultado=primerNumero+segundoNumero;
+            alert("La suma es "+resultado);
+        }
+
+        function mostrar(numero){
+            alert(numero);
+        }
+
+//FUNCIÓN SIN PARÁMETROS
+        function saludar(){
+            let nombre=prompt("Ingrese su nombre");
+            let apellido=prompt("Ingrese su apellido");
+            alert("Buenas noches "+nombre+" "+apellido);
+        }
+
+//FUNCIÓN CON PARÁMETROS
+        function saludarConParametros(nom,ape){
+            alert("Buenas noches "+nom+" "+ape);
+        }
+
+//FUNCIÓN CON PARÁMETRO Y RETORNO
+        function aplicarDescuento(total,porcentajeDescuento){
+            let descuento=(porcentajeDescuento*total)/100;
+            let totalConDescuento=total-descuento;
+            return totalConDescuento;
+        }
+
+
+        let primerNumero;
+        let segundoNumero;
+       sumar(5,6);
+
+       let numero;
+        mostrar(11);
+
+        saludar();
+
+        let nombre=prompt("Ingrese su nombre");
+        let apellido=prompt("Ingrese su apellido");
+        saludarConParametros(nombre,apellido);
+
+        let valorTotal=parseInt(prompt("Ingrese el monto total de la compra"));
+        let descuentoAaplicar=parseInt(prompt("Ingrese el porcentaje de descuento que posee"));
+
+        let montoFinal=aplicarDescuento(valorTotal,descuentoAaplicar);
+        alert("El monto final a abonar es $ "+montoFinal);
+        
+    </script>
+</body>
+
+
+</html>
 
 
 
