@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cuota banco</title>
+    </head>
+    <body>
+        <script>
+        let totalCompra=parseFloat(prompt("Ingrese el valor total de la compra"));
+        const cuota=12;
+        let banco=prompt("Ingrese el banco al que pertenece la tarjeta de crédito");
+
+        //FUNCIÓN QUE CACULA EL INTERÉS QUE APLICA CADA BANCO
+
+        function calcularInteres(entidadBancaria){
+            let interes=0;
+            switch(entidadBancaria){
+                case "santander":
+                    interes=25;
+                break;
+                case "bankia":
+                    interes=28;
+                break;
+                case "bbva":
+                    interes=30;
+                break;
+                case "ing":
+                    interes=32;
+                break;
+                    interes=55;
+                    console.log("Ese banco no tiene promociones");
+                default:
+                
+            }
+            return interes;
+        }
+
+        //FUNCIÓN QUE LE AGREGA EL INTERÉS AL VALOR TOTAL DE LA COMPRA
+        function calcularTotalConInteres(total,interes){
+                let valorInteres=(interes*total)/100;
+                let ValorTotalConInteres=total+valorInteres;
+                return ValorTotalConInteres;
+        }
+        //FUNCIÓN QUE CALCULA EL VALOR DE CADA CUOTA CON EL INTERÉS APLICADO
+        function calcularValorCuota(totalConInteres,cantCuotas){
+            let valorCuota=totalConInteres/cantCuotas;
+            return valorCuota;
+        }
+
+        let interesObtenido=calcularInteres(banco);
+        let TotalMasInteres=calcularTotalConInteres(totalCompra,interesObtenido);
+        let cadaCuota=calcularValorCuota(TotalMasInteres,cuota);
+
+        alert("El banco tiene un interes del : "+interesObtenido+" %\n La cuota con el interes es : "+TotalMasInteres+" euros \n El importe de cada cuota es : "+cadaCuota);
+              
+        </script>
+    </body>
+</html>
