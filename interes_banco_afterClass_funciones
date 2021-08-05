@@ -1,3 +1,11 @@
+//Funciones anidadas:
+//Teniendo en cuenta el valor total de una compra a realizarse , 
+// y al desear abonar en 12 cuotas con tarjeta de Crédito
+//calcular:
+//El interés de cada banco
+//El valor total con interés y el valor de cada cuota.
+//Enlazar funciones
+
 
 <!DOCTYPE html>
 <html>
