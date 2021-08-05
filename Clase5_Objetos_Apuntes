@@ -240,7 +240,8 @@ producto1.vender();
 Asimismo, el empleo de clase nos permite aplicar técnicas avanzadas de programación al trabajar con ciertos objetos, como el uso de herencia de clase.
 
 
-//CLASES :ES UNA FORMA DE CREAR OBJETOS A TRAVÉS DE UNA CLASE
+
+        //CLASES :ES UNA FORMA DE CREAR OBJETOS A TRAVÉS DE UNA CLASE
 
         class Persona{
             constructor(nombre,edad,calle){
@@ -248,10 +249,46 @@ Asimismo, el empleo de clase nos permite aplicar técnicas avanzadas de programa
                 this.edad=edad;
                 this.calle=calle;
             }
+            hablar(){
+
+            }
         }
         const persona1=new Persona("Homero",39, "Springfield");
-        
-        
+        persona1.hablar();
+
+
+        //OTRO EJEMPLO DE CLASES
+
+        class Computadora{
+            constructor(tipo,sistema,memoria,procesador){
+                this.tipo=tipo;
+                this.sistema=sistema;
+                this.memoria=memoria;
+                this.procesador=procesador;
+
+            }
+            mostrarComputadora(){
+                console.log("Tipo: "+this.tipo);
+                //EN CASO DE QUE QUERAMOS MOSTRAR EL PARÁMETRO TIPO USAMOS THIS.TIPO
+
+            }
+            mostrarComputadora2(){
+                console.log(this);
+                //EN CASO DE QUE QUERAMOS MOSTRAR TODOS LOS PARÁMETROS DE ESE ELEMENTO
+            }
+            actualizarMemoria(){
+                //CAMBIAMOS EL VALOR DE LA MEMORIA
+                let nuevaMemo=parseInt(prompt("Ingrese el nuevo valor de memoria RAM"));
+                this.memoria=nuevaMemo;
+            }
+        }
+        const compu1=("notebook","Linux",8,"Intel i7");
+        const compu2=("escritorio","windows",4,"Intel i5");
+        console.log(compu1);
+        console.log(compu1.sistema);
+        compu1.mostrarComputadora();
+        compu2.mostrarComputadora2();
+        compu1.actualizarMemoria();
 
 MÉTODOS DE STRINGS:
 ____________________
