@@ -1,0 +1,97 @@
+DOCUMENT.WRITE
+______________
+
+Se utiliza para escribir código html en java.
+document.write("<p>El primer artículo es <strong>");
+document-write(articulos[0] + "</strong></p>);
+
+
+ARRAYS
+______
+
+Array: Gran variable donde podemos almacenar varios datos. Podemos almacenar un grupo de valores.
+
+Dos formas de declarar el array:
+
+var articulos=["zapatillas","pantalon","camiseta","calcetines"];
+var articulos=new Array("zapatillas","pantalon","camiseta","calcetines");
+
+Los arreglos se utilizan mucho en los carritos de la compra de una página web. Cuando el usuario selecciona los artículos que va a comprar.
+
+Los elementos del array están identificados por los índices o posiciones. Comienzan con la posición 0.
+
+Ejemplo articulos:
+
+Zapatillas -->[0]
+Camiseta-->[1]
+Pantalón-->[2]
+Calcetines-->[3]
+
+alert(articulos[1]);  --> para ver un elemento de una posición determinada del array
+
+
+PROPIEDADES Y MÉTODOS DEL ARRAY IMPORTANTES
+___________________________________________
+
+LENGTH:
+propiedades length: nos dice cuál es la longitud o números de elementos de un array.
+ejemplo:
+
+articulos.length=4;
+
+Nos dice que la longitud del arreglo es 4
+
+
+PUSH:
+
+Agrega elementos al final del array.
+
+Se usa para agregar elementos.
+articulos.push("balón");
+articulos.push("balon","raqueta","bolsa");
+
+
+UNSHIFT: 
+
+Agrega los elementos al comienzo del array.
+
+articulos.unshift("balon");
+articulos.unshift("balon","raqueta","bolsa");
+
+
+POP:
+
+Elimina elementos al final del array.
+articulos.pop();
+
+
+SHIFT:
+
+Elimina elementos al comienzo del array.
+articulos.shift();
+
+
+Dos formas de declarar el array:
+
+var articulos=["Zapatillas","Camiseta","pantalon","calcetines"];
+var articulos=new Array("Zapatillas","Camiseta","pantalon","calcetines");
+
+O se puede declarar el arrray vacío
+
+var articulos=[];
+
+
+EJEMPLO:
+_______
+
+document.write("<p>El primer artículo es <strong>");
+document-write(articulos[0] + "</strong></p>);
+
+alert(articulos.length); //Nos dice cuántos elementos hay en un array
+
+
+
+
+
+
+
