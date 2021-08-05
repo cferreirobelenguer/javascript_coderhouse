@@ -1,4 +1,5 @@
 
+
 //Funciones anidadas:
 //Teniendo en cuenta el valor total de una compra a realizarse , 
 // y al desear abonar en 12 cuotas con tarjeta de Crédito
@@ -6,6 +7,25 @@
 //El interés que ofrece cada Banco en promoción.
 //El valor total con interés y el valor de cada cuota.
 //Enlazar funciones
+
+
+DOCUMENTO HTML
+______________
+
+
+<!DOCTYPE html>
+<head>
+    <title>Cuota bancaria</title>
+</head>
+<body>
+    <script src="ejemploCuotasBanco.js"></script>
+</body>
+
+
+
+
+DOCUMENTO JS
+____________
 
 
 const cuotas=12;
