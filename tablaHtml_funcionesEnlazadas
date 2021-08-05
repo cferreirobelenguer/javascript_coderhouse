@@ -1,0 +1,47 @@
+
+/*
+Realizar y probar una función que genere el código HTML de tablas con borde igual a 1, 
+introduciendo el número de filas,columnas y contenido por consola a través de funciones,
+Mostrar el programa de html por consola y abrirlo con el navegador.
+Llamar a la función de generar tabla también llamando a la vez a las funciones de generar lista, columna y contenido.
+*/
+
+
+let filas=0;
+let columnas=0;
+let contenido;
+
+function obtenerFilas(){
+    filas=parseInt(prompt("Introduce el número de filas para la tabla"));
+    return filas;
+}
+
+function obtenerColumnas(){
+    columnas=parseInt(prompt("Introduce el número de columnas para la tabla"));
+    return columnas;
+}
+
+function escribirContenido(){
+    contenido=prompt("Escribe contenido para la tabla de html");
+    return contenido;
+}
+function generarHTMLTable(filas,columnas,contenido){
+    console.log("<!DOCTIPE html>");
+    console.log("<html>")
+    console.log("<body>");
+    console.log("<table border=1>");
+    
+        for(let i=1;i<=columnas;i++){
+            console.log("<tr>");
+            for(let x=1;x<=filas;x++){
+              console.log("<td>"+contenido+"</td>");  
+            }
+             console.log("</tr>");
+        }
+    
+    console.log("</table>");
+    console.log("</body>");
+    console.log("</html>");
+        }
+
+generarHTMLTable(obtenerFilas(),obtenerColumnas(),escribirContenido());
