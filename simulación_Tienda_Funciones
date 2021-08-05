@@ -1,0 +1,169 @@
+
+/*Programa de funciones que simula un carrito de la compra, en el cual aparece un menú de productos y el 
+usuario selecciona cuáles quiere y cuando pulsa 10 ve el carrito de la compra, elige el método de pago, tipo de envío,
+dirección y datos.
+
+El documento html asociado a este ejercicio es el de tienda online, adjunto también el resto de diseño de la web del proyecto.*/
+
+
+
+let carrito=0;
+
+function producto1(){
+    let pelota=5;
+    alert("Usted ha seleccionado Pelota mascotas cuyo precio es "+pelota+" € , producto añadido al carrito");
+    carrito+=pelota;
+}
+
+function producto2(){
+    let kong=6;
+    alert("Usted ha seleccionado Kong para mascotas cuyo precio es "+kong+" €, producto añadido al carrito");
+    carrito+=pelota;
+}
+
+function producto3(){
+    let comedero_perros=10;
+    alert("Usted ha seleccionado comedero_perros cuyo precio es "+comedero_perros+" €, producto añadido al carrito");
+    carrito+=comedero_perros;
+}
+
+function producto4(){
+    let cama_perros=30;
+    carrito+=cama_perros;
+    return ("Usted ha seleccionado cama para perros, cuyo precio es "+cama_perros+" €, producto añadido al carrito");
+}
+
+function producto5(){
+    let raton=2;
+    carrito+=raton;
+    return("Usted ha seleccionado juguete ratón para gatos, cuyo precio es "+raton+" €, producto añadido al carrito");
+}
+
+function producto6(){
+    let rascador=50;
+    carrito+=rascador;
+    return("Usted ha seleccionado rascador para gatos, cuyo precio es "+rascador+" €, producto añadido al carrito");
+}
+function producto7(){
+    let comedero_gatos=10;
+    carrito+=comedero_gatos;
+    return("Usted ha seleccionado comedero para gatos, cuyo precio es "+comedero_gatos+" €, producto añadido al carrito");
+}
+
+function producto8(){
+    let cama_gatos=40;
+    carrito+=cama_gatos;
+    return("Usted ha seleccionado cama para gatos, cuyo precio es "+cama_gatos+" €, producto añadido al carrito");
+}
+
+function cancelarProductos(){
+    let cancelar=prompt("¿Qué producto desea cancelar, seleccione del 1 al 9");
+    console.log("ACCESORIOS PARA PERROS");
+    console.log("1. Pelota mascotas");
+    console.log("2. Kong para mascotas");
+    console.log("3. Comedero para perros");
+    console.log("4. Cama para perros");
+    console.log("ACCESORIOS PARA GATOS");
+    console.log("5. Juguete ratón para gatos");
+    console.log("6. rascador para gatos");
+    console.log("7. comedero para gatos");
+    console.log("8. Cama para gatos");
+    switch(cancelar){
+        case "1":
+            alert("Producto pelota mascotas eliminado del carrito")
+            carrito-=pelota;
+            break;
+        case "2":
+            alert("Porducto Kong para mascotas eliminado del carrito");
+            carrito-=kong;
+            break;
+        case "3":
+            alert("Producto comedero para perros eliminado del carrito");
+            carrito-=comedero_perros;
+            break;
+        case "4":
+            alert("Producto cama para perros eliminado del carrito");
+            carrito-=cama_perros;
+            break;
+        case "5":
+            alert("Producto juguete ratón para gatos eliminado del carrito");
+            carrito-=raton;
+            break;
+        case "6":
+            alert("Producto rascador para gatos eliminado del carrito");
+            carrito-=rascador;
+            break;
+        case "7":
+            alert("Producto comedero para gatos eliminado del carrito");
+            carrito-=comedero_gatos;
+            break;
+        case "8":
+            alert("Producto cama para gatos eliminado del carrito");
+            carrito-=cama_gatos;
+            break;
+        default:
+            alert("No podemos cancelar el producto porque no existe");
+    }
+}
+
+let opcion=0;
+let palabra;
+
+alert("Bienvenido a la tienda de mascotas Noa");
+alert("A continuación se muestra un menú con todos nuestros productos de perros");
+console.log("ACCESORIOS PARA PERROS");
+console.log("1. Pelota mascotas");
+console.log("2. Kong para mascotas");
+console.log("3. Comedero para perros");
+console.log("4. Cama para perros");
+alert("A continuación se muestra un menú con todos nuestros productos de gatos");
+console.log("ACCESORIOS PARA GATOS");
+console.log("5. Juguete ratón para gatos");
+console.log("6. rascador para gatos");
+console.log("7. comedero para gatos");
+console.log("8. Cama para gatos");
+console.log("9 Cancelar un producto del carrito");
+
+
+palabra=prompt("Por favor seleccione lo que quiere incluir en su carrito, si escribe pagar pasará a ver el carrito y proceder al pago de su compra");
+
+while((palabra!="PAGAR")||(palabra!="pagar")){
+switch(palabra){
+    case "1":
+        producto1();
+        break;
+    case "2":
+        producto2();
+        break;
+    case "3":
+        producto3();
+
+        break;
+    case "4":
+        alert(producto4());
+
+        break;
+    case "5":
+       alert(producto5());
+        break;
+    case "6":
+        alert(producto6());
+        break;
+    case "7":
+        alert(producto7());
+
+        break;
+    case "8":
+        alert(producto8());
+
+        break;
+    case "9":
+        cancelarProductos();
+
+    default:
+    alert("Disculpe pero la opción introducida no está disponible");
+    }   
+
+    alert("El total de su compra es : "+carrito);
+    
+}
