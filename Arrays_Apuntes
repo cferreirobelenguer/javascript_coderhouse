@@ -70,10 +70,13 @@ SHIFT:
 Elimina elementos al comienzo del array.
 articulos.shift();
 
-
 Dos formas de declarar el array:
 
+<script>
 var articulos=["Zapatillas","Camiseta","pantalon","calcetines"];
+</script>
+
+
 var articulos=new Array("Zapatillas","Camiseta","pantalon","calcetines");
 
 O se puede declarar el arrray vacío
@@ -83,13 +86,37 @@ var articulos=[];
 
 EJEMPLO:
 _______
+<script>
 
 document.write("<p>El primer artículo es <strong>");
 document-write(articulos[0] + "</strong></p>);
 
 alert(articulos.length); //Nos dice cuántos elementos hay en un array
 
+document.write(articulos[articulos.length-1]); //accedemos a leer el último elemento del array
+document.write(articulos[articulos.length-1]+ "</string></p>");
 
+articulos.unshift("Balon"); //Se ha agregado el elemento balón en la última posición del array
+
+document.write("<p> Casi nos olvidamos!!! Agregamos este elemento: <strong>");
+
+document.write(articulos[0] + "</strong></p>");
+
+
+
+document.write("<p>Agreguemos un elemento más al final: <strong>");
+
+articulos.push(prompt("Introduce el articulo"));   //Agregamos ahora un elemento al final que introduzca el usuario
+
+document.write(articulos[articulos.length-1] +"</strong></p>");
+
+
+
+
+
+
+
+</script>
 
 
 
