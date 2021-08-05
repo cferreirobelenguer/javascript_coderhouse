@@ -135,6 +135,27 @@ console.log(cadena.toUpperCase());
 Haz clic aquí para verificar todos los mètodos útiles que tiene el objeto string
 
 
+IN: MUESTRA VALOR BOOLEANO SI LA PROPIEDAD SELECCIONADA ESTÁ DENTRO DEL ELEMENTO
+________________________________________________________________________________
+
+const persona1={nombre:"Homero",edad:39;calle:Springfield};
+
+in nos sirve para buscar propiedades en objetos:
+
+console.log("nombre" in persona1);
+
+devuelve true porque la clave "nombre" existe en el objeto personal, si no existiera devolvería false.
+
+
+BUCLE FOR IN: RECORRE PROPIEDADES DE OBJETOS,MUESTRA TODAS LAS PROPIEDADES DE LOS OBJETOS
+_________________________________________________________________________________________
+
+Te muestra las propiedades del objeto
+
+for(const i in persona1){
+ console.log(persona1[i]);
+}
+
 
 
 
@@ -163,6 +184,10 @@ Es posible referenciar una función anónima o una tradicional: podemos definir 
 Para emplear las propiedades del objeto en los mètodos es necesario usar this: como observamos en console.log("HOLA SOY "+ this.nombre), para referenciar el valor de la propiedad nombre del objeto desde el cual se efectúa la llamada al mètodo,  es necesario emplear la autorreferencia con this.
 
 
+Otro ejemplo:
+
+//Creación de un método que nos muestra la información del microondas
+            this.mostrar=function(){console.log("El electrodomestico es: "+this.nombre+". El precio es $"+this.precio)};
 
 
 Clases
@@ -215,4 +240,32 @@ producto1.vender();
 Asimismo, el empleo de clase nos permite aplicar técnicas avanzadas de programación al trabajar con ciertos objetos, como el uso de herencia de clase.
 
 
- 
+//CLASES :ES UNA FORMA DE CREAR OBJETOS A TRAVÉS DE UNA CLASE
+
+        class Persona{
+            constructor(nombre,edad,calle){
+                this.nombre=nombre;
+                this.edad=edad;
+                this.calle=calle;
+            }
+        }
+        const persona1=new Persona("Homero",39, "Springfield");
+        
+        
+
+MÉTODOS DE STRINGS:
+____________________
+
+Cuando se crea un String automáticamente se convierte en un objeto.
+
+        //LENGTH: MIDE LA CANTIDAD DE CARACTERES
+        let frase="Hola mi nombre es PEPE";
+        console.log("La frase tiene: "+frase.length+" caracteres");
+
+        //TOUPPERCASE PARA PASAR A MAYÚSCULAS
+        let fraseMayusculas=frase.toUpperCase();
+        console.log(fraseMayusculas);
+
+        //TOLOWERCASE PARA PASAR A MINÚSCULAS
+        let fraseMinusculas=frase.toLowerCase();
+        console.log(fraseMinusculas);
