@@ -9,6 +9,7 @@ El documento html asociado a este ejercicio es el de tienda online, adjunto tamb
 
 let carrito=0;
 
+
 function producto1(){
     let pelota=5;
     alert("Usted ha seleccionado Pelota mascotas cuyo precio es "+pelota+" € , producto añadido al carrito");
