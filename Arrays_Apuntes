@@ -110,6 +110,82 @@ articulos.push(prompt("Introduce el articulo"));   //Agregamos ahora un elemento
 
 document.write(articulos[articulos.length-1] +"</strong></p>");
 
+alert("Borraremos el primer elemento");
+articulos.shift(); //Se borrará el primer elemento que es balon
+
+alert("Borraremos el último elemento");
+articulos.pop(); //Se borrará el último elemento del array
+
+
+
+CÓMO RECORRER EL ARRAY:
+_______________________
+
+Con el bucle for o for-each in:
+
+BUCLE FOR:
+__________
+Si son arreglos de números:
+
+numeros=[1,3,4,5];
+
+for(i=0;i<6;i++){
+  console.log(numeros[i]);
+}
+
+Si son arreglos de cadenas de caracteres:
+
+colores=["rojo","azul","negro"];
+  for(i=0;i<colores.length;i++){
+  console.log(colores[i]);
+}
+
+MÉTODO FOREACH:
+______________
+
+colores=["rojo","azul","negro"];
+colores.forEach(elemento =>{
+  console.log(elemento)
+  });
+  
+  
+ BUCLE FOREACH:
+ _____________
+ 
+ colores=["rojo","azul","negro"];
+ colores.forEach( function(colores,index)){
+  // console.log(`${index} => ${colores}`)
+  console.log(index+" => "+colores)
+ });
+ 
+  
+
+
+
+
+
+OTRO EJEMPLO:
+_____________
+
+var mes1="Enero";
+var mes2="Febrero";
+var mes3="Marzo";
+var mes4="Abril";
+
+var meses=["Enero","Febrero","Marzo","Abril"];
+
+
+document.write(meses[1]);
+//Se muestra el mes de febrero
+
+//Podemos agregar un elemento a través de la posición
+
+meses[4]="Mayo";
+meses[5]="Junio";
+
+var numero_elementos=meses.length;
+
+
 
 
 
