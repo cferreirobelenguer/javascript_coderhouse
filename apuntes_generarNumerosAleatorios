@@ -1,0 +1,81 @@
+
+
+NÚMEROS ALEATORIOS EN JAVASCRIPT
+_________________________________
+
+
+En Javascript disponemos de la clase Math, muy útil cuando queremos hacer cálculos matemáticos de cierta complejidad, más allá de los operadores aritméticos que ya nos aporta el lenguaje.
+
+Dicha clase está explicada y documentada en el capítulo sobre Math del manual de Javascript II. Para el que lo necesite, también tenemos explicaciones de lo que son las clases y los objetos.
+
+El caso es que la clase Math nos permite generar números aleatorios en Javascript, pero solamente mediante un número flotante (con decimales) entre el cero y el uno. En este taller de Javascript vamos a construir una simple función para crear un número aleatorio, entre un mínimo y un máximo, que es mucho más útil y que podremos utilizar luego en otros programas más complejos.
+
+Generar un número aleatorio con la clase Math de Javascript
+Aquí tenemos el código que hace uso del método random de la clase Math para obtener un número aleatorio con Javascript.
+
+var aleatorio = Math.random();
+Así hemos creado una variable aleatorio a la que asignamos el resultado de ejecutar el método random de la clase Math. El número aleatorio que obtenemos siempre estará comprendido entre 0 y 1. Será algo como 0.3882 o 0.9992...
+
+Generar números aleatorios en Javascript entre un mínimo y un máximo
+Si deseamos obtener un número aleatorio en otro rango lo podemos conseguir con un poco de matemáticas y la clase Math para el cálculo del valor random y su redondeo. Para ilustrarlo vamos a hacer una función que devuelve un número aleatorio comprendido en un intervalo. El intervalo lo recibe como parámetro con dos variables, una para el límite por la parte inferior y otra para la el límite por la parte superior.
+
+random(min, max) {
+    return Math.floor((Math.random() * (max - min + 1)) + min);
+}
+La función es tan sencilla como eso. Por medio de unos simples cálculos puedes comprobar que haciendo las multiplicaciones sumas y restas adecuadas podemos verificar que el resultado nos saldrá correcto. Pero quizás no resulte demasiado explicativa si estás comenzando en Javascript y te cuesta ver tanto código en la misma línea.
+
+Otra función más explicativa para generar los aleatorios
+Veamos ahora una función similar, que realiza todos los cálculos pero paso a paso, que quizás te guste más.
+
+function aleatorio(inferior, superior) {
+    var numPosibilidades = superior - inferior;
+    var aleatorio = Math.random() * (numPosibilidades + 1);
+    aleatorio = Math.floor(aleatorio);
+    return inferior + aleatorio;
+}
+La función que hemos hecho es muy sencilla, pero funciona perfectamente para todos los tipos de intervalos que podamos pasarle, tanto con números positivos como negativos. Lo primero que hacemos es obtener el número de posibilidades restando al límite superior el inferior. Luego multiplicamos dicho numero de posibilidades por el número aleatorio obtenido (que está entre 0 y 1), con lo que obtenemos un número aleatorio entre 0 y el número de posibilidades.
+
+El número tiene un montón de decimales, y en este ejemplo deseamos obtener un número entero, sin decimales. Por eso luego utilizamos el método round() de la clase Math, que nos da el entero más próximo. Como el número todavía está entre 0 y el número de posibilidades tenemos que sumarle el límite inferior, con lo que estará dentro del rango que deseamos. Este último valor será en que devuelva la función.
+
+Un ejemplo de lo que podemos hacer con un número aleatorio puede ser crear un enlace aleatorio en una página web. Lo podemos ver en el ejemplo Enlace aleatorio en Javascript. Además, en este ejemplo se crea el número aleatorio de manera ligeramente distinta a como lo hemos visto ahora, lo que puede ser interesante para aprender mejor a usar los métodos de la clase Math.
+
+Nota: Si lo prefieres con números decimales mira esta otro código. Te da un número entre el min y el max (excluyendo llegar al máximo). Osea, si pides números entre 1 y 10 en realidad estarías solicitando entre 1 y 9.9999999.
+function numeroAleatorioDecimales(min, max) {
+  var num = Math.random() * (max - min);
+  return num + min;
+}
+Verificar que las probabilidades de obtención de números son siempre las mismas
+Como extra en esta práctica podríamos verificar que la función propuesta no tiene problemas derivados por entregar números aleatorios que no tengan las mismas posibilidades de salir.
+
+function random(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+// Creo un array para llevar la cuenta de los valores
+let valueAppearances = [];
+
+// inicializo el array con la cuenta de los valores a cero
+for (let index = 0; index < 10; index++) {
+  valueAppearances.push(0);
+}
+
+// saco aleatorios un montón de veces
+for (let i = 0; i <= 10000; i++) {
+  // obtengo el aleatorio entre 2 y 9
+  let randomIndex = random(2, 9);
+  // incremento las apariciones de este valor
+  valueAppearances[randomIndex]++;
+}
+// muestro el array resultante, que debería tener más o menos las mismas apariciones
+// recuerda, para los índices entre 2 y 9
+console.log(valueAppearances);
+Si ejecutas este código verás en la consola de Javascript el número de apariciones para cada valor. Recuerda que solamente hemos buscado aleatorios entre 2 y 9, por lo que los índices 0, 1 del array deberían estar a cero.
+
+Obviamente, cada vez te saldrá un número de apariciones distintas de cada valor, pero más o menos estarán próximas entre si, indicando que la probabilidad es la misma.
+
+Un valor del array resultante posible sería este: [0, 0, 1232, 1273, 1281, 1306, 1181, 1232, 1289, 1207].
+
+Conclusión
+Con esto hemos aprendido a usar la función matemática para obtener números aleatorios en Javascript. Además hemos podido prácticar también con la función que redondea decimales hacia abajo (Math.floor()).
+
+Como mayor valor, tenemos una función que saca valores al azar, enteros entre un mínimo y un máximo, que podremos usar las veces que necesitemos.
