@@ -7,93 +7,155 @@ dirección y datos.
 
 El documento html asociado a este ejercicio es el de tienda online, adjunto también el resto de diseño de la web del proyecto.
 */
-let carrito=0;
-const pelota=5;
-const kong=6;
-const comedero_perros=10;
-const cama_perros=30;
-const raton=2;
-const rascador=50;
-const comedero_gatos=10;
-const cama_gatos=40;
 
-function producto1(){
-    
-    alert("Usted ha seleccionado Pelota mascotas cuyo precio es "+pelota+" € , producto añadido al carrito");
-    carrito+=pelota;
-}
-
-function producto2(){
-    
-    alert("Usted ha seleccionado Kong para mascotas cuyo precio es "+kong+" €, producto añadido al carrito");
-    carrito+=kong;
-}
-
-function producto3(){
-    
-    alert("Usted ha seleccionado comedero_perros cuyo precio es "+comedero_perros+" €, producto añadido al carrito");
-    carrito+=comedero_perros;
-}
-
-function producto4(){
-    
-    carrito+=cama_perros;
-    return ("Usted ha seleccionado cama para perros, cuyo precio es "+cama_perros+" €, producto añadido al carrito");
-}
-
-function producto5(){
-    
-    carrito+=raton;
-    return("Usted ha seleccionado juguete ratón para gatos, cuyo precio es "+raton+" €, producto añadido al carrito");
-}
-
-function producto6(){
-    
-    carrito+=rascador;
-    return("Usted ha seleccionado rascador para gatos, cuyo precio es "+rascador+" €, producto añadido al carrito");
-}
-function producto7(){
-    
-    carrito+=comedero_gatos;
-    return("Usted ha seleccionado comedero para gatos, cuyo precio es "+comedero_gatos+" €, producto añadido al carrito");
-}
-
-function producto8(){
-    
-    carrito+=cama_gatos;
-    return("Usted ha seleccionado cama para gatos, cuyo precio es "+cama_gatos+" €, producto añadido al carrito");
-}
-
-
-  
-function verCarrito(){
-    alert("El total de su compra es : "+carrito+" €");
-    let metodo_pago=prompt("Elija método de pago [tarjeta o paypal]");
-    if(metodo_pago=="tarjeta"){
-        alert("Usted ha elegido como método de pago tarjeta de crédito");
-    }else if(metodo_pago=="paypal"){
-        alert("Usted ha elegido como método de pago paypal");
-    }else{
-        alert("El método de pago elegido no existe");
-    
-    }
-    let direccion=prompt("Por favor escriba el nombre y la dirección de envío");
-    let envio=prompt("Por favor elija el método de envío [correos, mensajeria]")
-    if(envio=="correos"){
-        alert("Usted ha elegido correo ordinario como método de envío");
-    }else if(envio=="mensajeria"){
-        alert("Usted ha elegido mensajería como método de envío");
-    }else{
-        alert("El método de pago elegido no existe");
-    }
-    let total_compra="El total de su compra son "+carrito+", pagado por "+metodo_pago+" , enviado a la siguiente dirección: "+direccion+" a través de "+envio;
-    alert(total_compra);
-    alert("Gracias por su compra");
-}
+//DECLARACIÓN DE VARIABLES
 
 let opcion=0;
 let palabra;
+let carrito=0;
 
+    function producto1(){
+    
+        alert("Usted ha seleccionado Pelota mascotas cuyo precio es "+pelota+" € , producto añadido al carrito");
+        carrito+=pelota;
+    }
+
+    function producto2(){
+    
+        alert("Usted ha seleccionado Kong para mascotas cuyo precio es "+kong+" €, producto añadido al carrito");
+        carrito+=kong;
+    }
+
+    function producto3(){
+    
+        alert("Usted ha seleccionado comedero_perros cuyo precio es "+comedero_perros+" €, producto añadido al carrito");
+        carrito+=comedero_perros;
+    }
+
+    function producto4(){
+    
+        carrito+=cama_perros;
+        return ("Usted ha seleccionado cama para perros, cuyo precio es "+cama_perros+" €, producto añadido al carrito");
+    }
+
+    function producto5(){
+    
+        carrito+=raton;
+        return("Usted ha seleccionado juguete ratón para gatos, cuyo precio es "+raton+" €, producto añadido al carrito");
+    }
+
+    function producto6(){
+    
+        carrito+=rascador;
+        return("Usted ha seleccionado rascador para gatos, cuyo precio es "+rascador+" €, producto añadido al carrito");
+    }
+    function producto7(){
+    
+        carrito+=comedero_gatos;
+        return("Usted ha seleccionado comedero para gatos, cuyo precio es "+comedero_gatos+" €, producto añadido al carrito");
+    }
+
+    function producto8(){
+    
+        carrito+=cama_gatos;
+        return("Usted ha seleccionado cama para gatos, cuyo precio es "+cama_gatos+" €, producto añadido al carrito");
+    }
+
+
+  
+    function verCarrito(){
+
+        if(carrito!=0){
+            alert("El total de su compra es : "+carrito+" €");
+            let metodo_pago=prompt("Elija método de pago [tarjeta o paypal]");
+            if(metodo_pago=="tarjeta"){
+             alert("Usted ha elegido como método de pago tarjeta de crédito");
+            }else if(metodo_pago=="paypal"){
+                alert("Usted ha elegido como método de pago paypal");
+            }else{
+                alert("El método de pago elegido no existe");
+                return;
+            }
+            let direccion=prompt("Por favor escriba el nombre y la dirección de envío");
+            let envio=prompt("Por favor elija el método de envío [correos, mensajeria]")
+            if(envio=="correos"){
+                alert("Usted ha elegido correo ordinario como método de envío");
+    
+            }else if(envio=="mensajeria"){
+                alert("Usted ha elegido mensajería como método de envío");
+            }else{
+                alert("El método de envió elegido no existe,lo sentimos no podemos procesar su compra");
+                return;
+            }
+            let total_compra="El total de su compra son "+carrito+", pagado por "+metodo_pago+" , enviado a la siguiente dirección: "+direccion+" a través de "+envio;
+            alert(total_compra);
+            alert("Su número de pedido es "+n_pedido+" \n El código de envío es "+codigo_envio+" \nGracias por su compra");
+        }else if(carrito==0){
+            alert("No podemos procesar su solicitud, su carrito de la compra está vacío");
+            return;
+        
+        }
+        
+    }
+
+
+
+
+
+
+
+//CREACIÓN DE NÚMEROS ALEATORIOS PARA NÚMERO DE PEDIDO Y CÓDIGO DE ENVÍO
+
+let tamañoN_pedido=5;
+let tamañoC_envio=6;
+let n_pedido="";
+let codigo_envio="";
+let numero1;
+let numero;
+for(let i=1;i<=tamañoN_pedido;i++){
+    numero=Math.floor(Math.random()*(9-1+1)+1);
+    numero1=numero.toString();
+    n_pedido+=numero1;
+
+}
+
+
+for(let i=1;i<=tamañoC_envio;i++){
+    let codigo=Math.floor(Math.random()*(9-1+1)+1);
+    let codigo1=codigo.toString();
+    codigo_envio+=codigo1;
+}
+
+let pelota=5;
+let kong=6;
+let comedero_perros=10;
+let cama_perros=30;
+let raton=2;
+let rascador=50;
+let comedero_gatos=10;
+let cama_gatos=40;
+
+
+
+//MENÚ ESCRITO EN HTML
+document.write("<div class=titulo>");
+document.write("<h1>Bienvenido a la tienda de mascotas Noa</h1>");
+document.write("<h2>A continuación se muestra un menú con todos nuestros productos de perros</h2>");
+document.write("<h3>ACCESORIOS PARA PERROS</h3>");
+document.write("<p>1. Pelota mascotas<br>");
+document.write("2. Kong para mascotas<br>");
+document.write("3. Comedero para perros<br>");
+document.write("4. Cama para perros<br></p>");
+document.write("<h3>A continuación se muestra un menú con todos nuestros productos de gatos</h3>");
+document.write("ACCESORIOS PARA GATOS");
+document.write("<p>5. Juguete ratón para gatos<br>");
+document.write("6. rascador para gatos<br>");
+document.write("7. comedero para gatos<br>");
+document.write("8. Cama para gatos<br>");
+document.write("9.Ver carrito<br></p>");
+document.write("</div>");
+
+//MENÚ POR CONSOLA
 alert("Bienvenido a la tienda de mascotas Noa");
 alert("A continuación se muestra un menú con todos nuestros productos de perros");
 console.log("ACCESORIOS PARA PERROS");
@@ -110,6 +172,8 @@ console.log("8. Cama para gatos");
 console.log("9.Ver carrito");
 
 let contador=0;
+
+//USUARIO SELECCIONA OPCIÓN
 
 while(palabra!=9){
     palabra=prompt("Por favor seleccione lo que quiere incluir en su carrito, si escribe pagar pasará a ver el carrito y proceder al pago de su compra");
