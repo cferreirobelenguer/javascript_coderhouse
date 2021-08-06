@@ -306,3 +306,18 @@ Cuando se crea un String automáticamente se convierte en un objeto.
         //TOLOWERCASE PARA PASAR A MINÚSCULAS
         let fraseMinusculas=frase.toLowerCase();
         console.log(fraseMinusculas);
+        
+        //TOSTRING PARA PASAR DE ENTEROS A CADENA DE CARACTERES
+        let n_pedido=numero.toString();
+        
+        El método toString() pasa un entero a cadena de cacacteres.
+        
+        //PARSEINT PARA PASAR DE CADENA DE CARACTERES A ENTEROS:
+        
+        let n_pedido=parseInt(prompt("Introduzca el número de pedido"));
+        
+        //PARSEFLOAT O PARSEDOUBLE PARA PASAR CADENA DE CARACTERES A DECIMAL
+        
+        let n_pedido=parseFloat(prompt("Introduzca el número de pedido"));
+        
+        
