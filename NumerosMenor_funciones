@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script>
+
+    //Hacer un programa (algoritmo) que tenga tres funciones: 
+    //A) Una que lea tres números enteros. 
+    //B) función denominada MENOR que determine y regrese 
+    //al programa principal el menor de los tres números y 
+    //C) Muestre los números leídos y el menor de ellos.
+    
+    
+    let numero1=0;
+    let numero2=0;
+    let numero3=0;
+    let menor=0;
+    function leerNumero1(){
+        numero1=parseInt(prompt("Introduzca el valor del primer número"));
+        return numero1;
+    }
+    function leerNumero2(){
+        numero2=parseInt(prompt("Introduzca el valor del segundo número"));
+        return numero2;
+    }
+    function leerNumero3(){
+        numero3=parseInt(prompt("Introduzca el valor del tercer número"));
+        return numero3;
+    }
+
+    function determinarMenor(){
+        if ((numero1<numero2)&&(numero1<numero3)){
+            menor=numero1;
+            return numero1;
+        }else if((numero2<numero1)&&(numero2<numero3)){
+            menor=numero2;
+            return numero2;
+        }else if ((numero3<numero1)&&(numero3<numero2)){
+            menor=numero3;
+            return numero3;
+        }
+
+    }
+    function verValoresyMenor(numero1,numero2,numero3,menor){
+        alert("Los números son: \n"+numero1+"\n"+numero2+"\n"+numero3);
+        alert("El número menor es: "+menor);
+    }
+
+    verValoresyMenor(leerNumero1(),leerNumero2(),leerNumero3(),determinarMenor());
+</script>
+</body>
+
+
+</html>
