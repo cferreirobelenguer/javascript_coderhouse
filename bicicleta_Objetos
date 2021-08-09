@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Bicicleta</title>
-</head>
-<body>
-<script>
-    
+
 
 //Crear la clase "Bicicleta" con las siguientes propiedades: 
 //marca, color, condicion, precio y al menos un método 
@@ -29,22 +22,20 @@ class bicicleta{
         
 
     }
-    setMarca(){
-        return this.marca;
-    }
-    setColor(){
+  
+    set Color(){
         this.color=prompt("Indique el color de la bici");
         alert("El color modifcado es: "+this.color);
     }
-    setCondicion(){
+    set Condicion(){
         this.condicion=prompt("Indique la condición de la bici");
         return this.condicion;
     }
-    setPrecio(){
+    set Precio(){
         this.precio=prompt("Indique el precio de la bici");
         return this.precio;
     }
-    setMarca(){
+    set Marca(){
         this.marca=prompt("Indique la marca de la bicicleta");
         if(((this.marca=="RALEIGH")||(this.marca=="raleigh"))||((this.marca=="OLMO")||(this.marca=="olmo"))){
          this.marca=this.marca; 
@@ -62,16 +53,7 @@ const bici1=new bicicleta("Domyos","rojo","montaña","200");
 document.write("<h1>BIENVENIDO A LA FICHA DE LA BICICLETA</h1>\n")
 document.write("<h1>A continuacion se muestran por consola los datos de la bicicleta</h1>\n")
 alert("A continuacion se muestran por consola los datos de la bicicleta");
-bici1.setColor();
-bici1.setCondicion();
-bici1.setPrecio();
-bici1.setMarca();
-</script>
-</body>
-
-<input type="button" value="Seleccione color" onclick="bici1.setColor();"/>
-<input type="button" value="Seleccione condicion" onclick="bici1.setCondicion();"/>
-<input type="button" value="Seleccione precio" onclick="bici1.setPrecio();"/>
-<input type="button" value="Seleccione marca" onclick="bici1.setMarca();"/>
-
-</html>
+bici1.Color();
+bici1.Condicion();
+bici1.Precio();
+bici1.Marca();
