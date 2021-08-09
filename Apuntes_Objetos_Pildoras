@@ -1,0 +1,107 @@
+
+POO EN JAVASCRIPT APLICADO A HTML
+__________________________________
+
+Los objetos tienen características y capacidades.
+Por ejemplo una mesa tiene de características alto,ancho,color y de capacidad puede sostener objetos.
+
+A las características de un objeto se les llama propiedad y a las capacidades de ese objeto se les llama método.
+
+Por ejemplo en un coche:
+
+Propiedades (Cómo es): tiene ruedas, tiene ventanas, tiene motor, etc
+Métodos (es qué puede hacer); arrancar, acelerar, frenar, girar,etc.
+
+Los tipos de objetos son instancias;
+ejemplo coche 1 y coche 2.
+
+Ambos arrancan,aceleran, frenan, giran y luego cada uno tiene las propiedades de la clase coche más las suyas propias.
+
+
+Aplicado a javascript en una página web puede ser un objeto un botón de formulario, y las propiedades puede ser el ancho o el largo. De capacidades, se puede hacer click en él, puede moverse, etc.
+
+
+NOMENCLATURA DEL PUNTO
+______________________
+
+Se utiliza la jerarquía y el operador punto para modificar propiedades del objeto.
+
+ejemplo:
+
+renault.color="azul";
+
+nombreDelObjeto.propiedad=valor;
+
+
+Se utiliza la jerarquía y el operador punto para llamar a un método.
+
+ejemplo:
+
+renault.acelera();
+renault.frena();
+
+nombreDelObjeto.método();
+
+Aplicado a una web en javascript si queremos modificar el ancho de un botón sería style.width:
+
+boton.style.width="500px";
+
+O el color de fondo del botón:
+
+boton.style.backgroundColor="red";
+
+O si queremos coger el foco de un botón:
+
+boton.focus();
+
+
+Ejemplo:
+
+<body>
+<!--Creamos los botones-->
+
+  <input type="button" id="boton1">
+  <input type="button" id="boton2">
+  <input type="text" id="micuadro">
+  
+ <script>
+    var miboton=document.getElementById("boton1");
+    var miboton=document.getElementById("boton2");
+    var cuadroTexto=documento.getElementoById("micuadro");
+    
+    //Se está modificando la propiedad alto y ancho de los objetos botón 1 y 2
+    
+    miboton.style.width="300px",
+    miboton.style.width="300px",
+    
+    miboton.style.height="300px";
+    miboton.style.height="300px";
+    
+    //Se está modificando la propiedad color de los objetos botón 1 y 2
+    
+    miboton.style.backgroundColor="blue";
+    cuadroTexto.style.background="red";
+    cuadroTexto.value="Escriba aqui...";
+    cuadroTexto.style.hight="200px";
+    
+    //invocamos el método focus para el objeto boton
+    
+    miboton2.focus(); //método a través del cual quien tiene el foco es el objeto que llama al método
+    
+   
+    
+    
+    
+    
+ </script>
+ 
+ </body>
+ 
+ 
+
+
+
+
+
+
+
