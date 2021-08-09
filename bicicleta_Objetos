@@ -22,7 +22,7 @@ class bicicleta{
         
 
     }
-  
+  //setter de atributos 
     set Color(){
         this.color=prompt("Indique el color de la bici");
         alert("El color modifcado es: "+this.color);
