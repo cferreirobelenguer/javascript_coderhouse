@@ -345,3 +345,153 @@ console.log(aumentos);
 
  
  
+ 
+ 
+ 
+ 
+<!Doctype html>
+<html>
+<head>
+
+</head>
+<body>
+    <script>
+        const listaJs=[27,"Agosto","Voley",true,"Escorpio","Argentina"];
+
+        //muestra en consola el elemento de la posición 0 que es 27
+        console.log(listaJs[0]);
+
+        //muestra en consola el elemento de la posición 4 que es Escorpio
+        console.log(listaJs[4]);
+
+        //Si quiero acceder a una posición no cargada nos devuelve undefined
+        console.log(listaJs[10]);
+
+        //Concatenación de arrays: se concatenan Voley y Escorpio
+
+        console.log(listaJs[2]+listaJs[5]);
+
+        let valor= listaJs[0]+listaJs[6];
+        console.log(valor);
+
+        //recorrer Array: con el bucle for se recorren todos los elementos del array
+
+        for(let i=0;i<7;i++){
+            alert(listaJs[i]);
+        }
+
+
+        //MÉTODO LENGTH
+        //Nos dice la cantidad de elementos que tenemos, en este caso nos da 7 que es la longitud
+        console.log("Cantidad de elementos del array"+listaJs.length);
+
+
+        //MÉTODO TO STRING:
+        //Convierte un array en String, compuesto por cada uno de los elementos del array
+        //separados por comas
+        console.log("Método toString: "+listaJs.toString());
+
+        //MÉTODO PUSH
+        //Agrega un elemento al array al final de la lista
+        listaJs.push(1980);
+
+        //MÉTODO JOIN
+        //Unifica elementos utilizando el separador que se quiera por parámetro
+        console.log("Método join: "+listaJs.join("@"));
+        // va a unificar la lista con la @ como separador
+
+        //MÉTODO CONCAT
+        //Permite concatenar dos arrays
+        const otraLista=["Pepe","Alberto"];
+        const listasConcatenadas=listaJs.concat(otraLista);
+        console.log(listasConcatenadas);
+
+        //MÉTODO SLICE
+        //Devuelve una copia de una parte de un array dentro de un array,
+        //saca un subconjunto del array original
+        //Se está creando un array nuevo con las posiciones del 3 al 5(5 no incluido) que son true y Escorpio
+        const listaSuconjunto=listaJs.slice(3,5);
+        console.log(listaSuconjunto);
+
+        //toUpperCase() se usa para pasar a mayúsculas
+        //toLowerCase() se usa para pasar a minúsculas
+
+        //ARRAY DE OBJETOS
+        const productos =  [{ id: 1, producto: "Arroz" },
+                            { id: 2,  producto: "Fideo" },
+                            { id: 3,  producto: "Pan" }];
+                  
+
+        for (const producto of productos) {
+        console.log(producto.id);
+        console.log(producto.producto);
+        }
+
+        //OTRO EJEMPLO DE ARRAY DE OBJETOS
+
+        const producto1={nombre:"Celular Xiaomi Redmi 9",precio: 899};
+        const producto2={nombre:"Celular iPhone 12",precio:1100};
+        const producto3={nombre:"Celular Samsung A10",precio:399};
+        const listaCel=[producto1,producto2,producto3];
+        console.log(listaCel);
+
+        //USAMOS FOR OF PARA RECORRER ARRAYS DE OBJETOS
+        for(const celu of listaCel){
+            console.log(celu.nombre);
+            console.log(celu.precio);
+        }
+
+        //TYPEOF INDICA EL TIPO QUE ES CADA ELEMENTO
+
+        let miFuncion=(a,b)=>a+b;
+        console.log(typeof miFuncion); //imprime function
+
+        console.log(typeof listaJs); //imprime objetc porque es un array, y los arrays se consideran de tipo objeto
+
+        //MÉTODO FIND 
+        //Devuelve el valor del primer elemento del array que satisface la función de comprobación enviada por parámetro
+        //por ejemplo que se busque el primer elemento que sea mayor a 3 y lo guarda en la variable encontrado
+        const numeros=[1,2,3,4,5];
+        const encontrado=numeros.find(elemento=>elemento>3);
+        //Nos dará el 4
+        const listaNum=[12,45,23,87,12];
+        const encontrado=listaNum.find(item=>item<15);
+        console.log(encontrado);
+        //Nos dará el 12
+        //Si la búsqueda no se encuentra sale undefined
+
+
+        //MÉTODO FILTER
+        //Crea un array de todos los elementos que cumplen esa condición
+        const numeros=[1,2,3,4,5];
+        const filtro1=numeros.filter(elemento=>elemento>3);
+        const filtro2= numeros.filter(elemento=>elemento<4);
+
+        const subListaFiltrada=listaNum.filter(numer=>numero>23);
+        console.log(subListaFiltrada); //muestra 45 y 87
+
+        //MÉTODO MAP
+        //Se utiliza para crear un nuevo array con los elementos modificados en función de la operación dada
+
+        const numeros=[1,2,3,4,5];
+        //Se crea un nuevo array en el que cada elemento se multiplica por 2
+        const porDos=numeros.map(x=>x*2); //por cada elemento lo multiplica por 2 
+        //porDos=[2,4,6,8,10];
+        console.log(numeros);
+        console.log(porDos);
+
+        const masCien= porDos.map(x=>x+100); //masCien=[102,104,106,108,110]
+
+        const nombres=["Ana","Ema","Juan","Elia"];
+        const longitudes=nombres.map(nombre=>nombre.length); //longitudes=[3,3,4,4];
+
+        //MÉTODO SORT PARA ORDENAR ARRAYS
+        
+
+
+
+
+    </script>
+</body>
+</html>
+ 
