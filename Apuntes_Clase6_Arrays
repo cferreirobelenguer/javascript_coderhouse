@@ -487,6 +487,25 @@ console.log(aumentos);
 
         //MÉTODO SORT PARA ORDENAR ARRAYS
         
+         Ordenar Array con sort():
+          -------------------------
+
+         NombreArray.sort();
+
+          Ordenar Array de objetos: SE UTILIZA LA FUNCIÓN:  NombreArray.sort(function(a,b){return (a.NombreVariable-b.NombreVariable});
+          --------------------------
+
+            const trabajador1={nombre:"Pedro López Pérez",dni:dni1,años:6};
+            const trabajador2={nombre:"Esther Martín Gutierrez",dni:dni2,años:12};
+            const trabajador3={nombre:"Pablo Martinez Almeida",dni:dni3,años:45};
+            const trabajador4={nombre:"Erika López Gallardo",dni:dni4,años:2};
+           
+            
+            const trabajadores=[trabajador1,trabajador2,trabajador3,trabajador4];
+            //Los años cotizados de los trabajadores ordenados;
+             trabajadores.sort(function(a,b){
+                return (a.años-b.años)
+            });
 
 
 
