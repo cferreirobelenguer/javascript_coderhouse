@@ -1,0 +1,266 @@
+
+String — Cadena de caracteres
+______________________________
+
+El objeto String se utiliza para representar y manipular una secuencia de caracteres.
+
+
+Descripción
+____________
+Las cadenas son útiles para almacenar datos que se pueden representar en forma de texto. Algunas de las operaciones más utilizadas en cadenas son verificar su length, para construirlas y concatenarlas usando operadores de cadena + y +=, verificando la existencia o ubicación de subcadenas con indexOf() o extraer subcadenas con el método substring().
+
+
+Crear cadenas
+______________
+Las cadenas se pueden crear como primitivas, a partir de cadena literales o como objetos, usando el constructor String():
+
+const string1 = "Una cadena primitiva";
+const string2 = 'También una cadena primitiva';
+const string3 = `Otra cadena primitiva más`;
+const string4 = new String("Un objeto String");
+Las strings primitivas y los objetos string se pueden usar indistintamente en la mayoría de las situaciones. Consulta "Primitivas String y objetos String" a continuación.
+
+Los cadena literales se pueden especificar usando comillas simples o dobles, que se tratan de manera idéntica, o usando el carácter de comilla invertida `. Esta última forma especifica una Plantilla literal: con esta forma puedes interpolar expresiones.
+
+
+Acceder a un caracter
+_____________________
+Hay dos formas de acceder a un caracter individual en una cadena. La primera es con el método charAt():
+
+return 'cat'.charAt(1) // devuelve "a"
+
+La otra forma (introducida en ECMAScript 5) es tratar a la cadena como un objeto similar a un arreglo, donde los caracteres individuales corresponden a un índice numérico:
+
+return 'cat'[1] // devuelve "a"
+
+Cuando se usa la notación entre corchetes para acceder a los caracteres, no se puede intentar eliminar o asignar un valor a estas propiedades. Las propiedades involucradas no se pueden escribir ni configurar. (Ve Object.defineProperty() para más información).
+
+
+
+
+Comparar cadenas
+________________
+En C, se usa la función strcmp() para comparar cadenas. En JavaScript, solo usas los operadores menor que y mayor que (en-US):
+
+let a = 'a'
+let b = 'b'
+if (a < b) { // true
+  console.log(a + ' es menor que ' + b)
+} else if (a > b) {
+  console.log(a + ' es mayor que ' + b)
+} else {
+  console.log(a + ' y ' + b + ' son iguales.')
+}
+
+Puedes lograr un resultado similar usando el método localeCompare() heredado por las instancias de String.
+
+Ten en cuenta que a == b compara las cadenas en a y b por ser igual en la forma habitual que distingue entre mayúsculas y minúsculas. Si deseas comparar sin tener en cuenta los caracteres en mayúsculas o minúsculas, usa una función similar a esta:
+
+function isEqual(str1, str2)
+{
+    return str1.toUpperCase() === str2.toUpperCase()
+} // isEqual
+En esta función se utilizan mayúsculas en lugar de minúsculas, debido a problemas con ciertas conversiones de caracteres UTF-8.
+
+
+
+Primitivas String y objetos String
+___________________________________
+
+Ten en cuenta que JavaScript distingue entre objetos String y valores de primitivas string. (Lo mismo ocurre con Booleanos y Números).
+
+Las cadenas literales (denotadas por comillas simples o dobles) y cadenas devueltas de llamadas a String en un contexto que no es de constructor (es decir, llamado sin usar la palabra clave new) son cadenas primitivas. JavaScript automáticamente convierte las primitivas en objetos String, por lo que es posible utilizar métodos del objeto String en cadenas primitivas. En contextos donde se va a invocar a un método en una cadena primitiva o se produce una búsqueda de propiedad, JavaScript ajustará automáticamente la cadena primitiva y llamará al método o realizará la búsqueda de la propiedad.
+
+let s_prim = 'foo'
+let s_obj = new String(s_prim)
+
+console.log(typeof s_prim) // Registra "string"
+console.log(typeof s_obj)  // Registra "object"
+
+
+Las primitivas de String y los objetos String también dan diferente resultado cuando se usa eval(). Las primitivas pasadas a eval se tratan como código fuente; Los objetos String se tratan como todos los demás objetos, devuelven el objeto. Por ejemplo:
+
+let s1 = '2 + 2'              // crea una string primitiva
+let s2 = new String('2 + 2')  // crea un objeto String
+console.log(eval(s1))         // devuelve el número 4
+console.log(eval(s2))         // devuelve la cadena "2 + 2"
+Copy to Clipboard
+Por estas razones, el código se puede romper cuando encuentra objetos String y espera una string primitiva en su lugar, aunque generalmente los autores no necesitan preocuparse por la distinción.
+
+Un objeto String siempre se puede convertir a su contraparte primitiva con el método valueOf().
+
+console.log(eval(s2.valueOf()))  // devuelve el número 4
+Copy to Clipboard
+Notación de escape
+Los caracteres especiales se pueden codificar mediante notación de escape:
+
+Código	Salida
+\XXX
+(donde XXX es de 1 a 3 dígitos octales; rango de 0-377)	Punto de código Unicode/carácter ISO-8859-1 entre U+0000 y U+00FF
+\'	Comilla sencilla
+\"	Comilla doble
+\\	Barra inversa
+\n	Nueva línea
+\r	Retorno de carro
+\v	Tabulación vertical
+\t	Tabulación
+\b	Retroceso
+\f	Avance de página
+\uXXXX (donde XXXX son 4 dígitos hexadecimales; rango de 0x0000-0xFFFF)	Unidad de código UTF-16/punto de código Unicode entre U+0000 y U+FFFF
+\u{X} ... \u{XXXXXX}
+(donde X…XXXXXX es de 1 a 6 dígitos hexadecimales; rango de 0x0-0x10FFFF)	Unidad de código UTF-32/punto de código Unicode entre U+0000 y U+10FFFF
+\xXX
+(donde XX son 2 dígitos hexadecimales; rango de 0x00-0xFF)	Punto de código Unicode/carácter ISO-8859-1 entre U+0000 y U+00FF
+Cadenas literales largas
+A veces, tu código incluirá cadenas que son muy largas. En lugar de tener líneas que se prolongan interminablemente o que se ajustan según el capricho de tu editor, es posible que desees dividir específicamente la cadena en varias líneas en el código fuente sin afectar el contenido real de la cadena. hay dos maneras de conseguirlo.
+
+
+
+Método 1
+Puedes usar el operador + para agregar varias cadenas juntas, así:
+
+let longString = "Esta es una cadena muy larga que necesita " +
+                 "que dividimos en varias líneas porque " +
+                 "de lo contrario, mi código es ilegible."
+
+
+
+Método 2
+Puedes usar el caracter de barra invertida (\) al final de cada línea para indicar que la cadena continúa en la siguiente línea. Asegúrate de que no haya ningún espacio ni ningún otro carácter después de la barra invertida (a excepción de un salto de línea) o como sangría; de lo contrario, no trabajará.
+
+Esa forma se ve así:
+
+let longString = "Esta es una cadena muy larga que necesita \
+que dividimos en varias líneas porque \
+de lo contrario, mi código es ilegible."
+
+Ambos métodos anteriores dan como resultado cadenas idénticas.
+
+
+
+Constructor
+String()
+__________
+Crea un nuevo objeto String. Realiza la conversión de tipos cuando se llama como función, en lugar de como constructor, lo cual suele ser más útil.
+Métodos estáticos
+String.fromCharCode(num1 [, ...[, numN]])
+Devuelve una cadena creada utilizando la secuencia de valores Unicode especificada.
+String.fromCodePoint(num1 [, ...[, numN]])
+Devuelve una cadena creada utilizando la secuencia de puntos de código especificada.
+String.raw()
+Devuelve una cadena creada a partir de una plantilla literal sin formato.
+Propiedades de la instancia
+String.prototype.length
+Refleja la length de la cadena. Solo lectura.
+Métodos de instancia
+String.prototype.charAt(index)
+Devuelve el caracter (exactamente una unidad de código UTF-16) en el index especificado.
+String.prototype.charCodeAt(index)
+Devuelve un número que es el valor de la unidad de código UTF-16 en el index dado.
+String.prototype.codePointAt(pos)
+Devuelve un número entero no negativo que es el valor del punto de código del punto de código codificado en UTF-16 que comienza en la pos especificada.
+String.prototype.concat(str[, ...strN])
+Combina el texto de dos (o más) cadenas y devuelve una nueva cadena.
+String.prototype.includes(searchString [, position])
+Determina si la cadena de la llamada contiene searchString.
+String.prototype.endsWith(searchString[, length])
+Determina si una cadena termina con los caracteres de la cadena searchString.
+String.prototype.indexOf(searchValue[, fromIndex])
+Devuelve el índice dentro del objeto String llamador de la primera aparición de searchValue, o -1 si no lo encontró.
+String.prototype.lastIndexOf(searchValue[, fromIndex])
+Devuelve el índice dentro del objeto String llamador de la última aparición de searchValue, o -1 si no lo encontró.
+String.prototype.localeCompare(compareString[, locales[, options]])
+Devuelve un número que indica si la cadena de referencia compareString viene antes, después o es equivalente a la cadena dada en el orden de clasificación.
+String.prototype.match(regexp)
+Se utiliza para hacer coincidir la expresión regular regexp con una cadena.
+String.prototype.matchAll(regexp)
+Devuelve un iterador de todas las coincidencias de regexp.
+String.prototype.normalize([form])
+Devuelve la forma de normalización Unicode del valor de la cadena llamada.
+String.prototype.padEnd(targetLength[, padString]) (en-US)
+Rellena la cadena actual desde el final con una cadena dada y devuelve una nueva cadena de longitud targetLength.
+String.prototype.padStart(targetLength[, padString])
+Rellena la cadena actual desde el principio con una determinada cadena y devuelve una nueva cadena de longitud targetLength.
+String.prototype.repeat(count)
+Devuelve una cadena que consta de los elementos del objeto repetidos count veces.
+String.prototype.replace(searchFor, replaceWith)
+Se usa para reemplazar ocurrencias de searchFor usando replaceWith. searchFor puede ser una cadena o expresión regular, y replaceWith puede ser una cadena o función.
+String.prototype.replaceAll(searchFor, replaceWith) (en-US)
+Se utiliza para reemplazar todas las apariciones de searchFor usando replaceWith. searchFor puede ser una cadena o expresión regular, y replaceWith puede ser una cadena o función.
+String.prototype.search(regexp)
+Busca una coincidencia entre una expresión regular regexp y la cadena llamadora.
+String.prototype.slice(beginIndex[, endIndex])
+Extrae una sección de una cadena y devuelve una nueva cadena.
+String.prototype.split([sep[, limit] ])
+Devuelve un arreglo de cadenas pobladas al dividir la cadena llamadora en las ocurrencias de la subcadena sep.
+String.prototype.startsWith(searchString[, length])
+Determina si la cadena llamadora comienza con los caracteres de la cadena searchString.
+String.prototype.substr()
+Devuelve los caracteres en una cadena que comienza en la ubicación especificada hasta el número especificado de caracteres.
+String.prototype.substring(indexStart[, indexEnd])
+Devuelve una nueva cadena que contiene caracteres de la cadena llamadora de (o entre) el índice (o indeces) especificados.
+String.prototype.toLocaleLowerCase( [locale, ...locales])
+Los caracteres dentro de una cadena se convierten a minúsculas respetando la configuración regional actual.
+
+Para la mayoría de los idiomas, devolverá lo mismo que toLowerCase().
+
+String.prototype.toLocaleUpperCase( [locale, ...locales])
+Los caracteres dentro de una cadena se convierten a mayúsculas respetando la configuración regional actual.
+
+Para la mayoría de los idiomas, devolverá lo mismo que toUpperCase().
+
+String.prototype.toLowerCase()
+Devuelve el valor de la cadena llamadora convertido a minúsculas.
+String.prototype.toString()
+Devuelve una cadena que representa el objeto especificado. Redefine el método Object.prototype.toString().
+String.prototype.toUpperCase()
+Devuelve el valor de la cadena llamadora convertido a mayúsculas.
+String.prototype.trim()
+Recorta los espacios en blanco desde el principio y el final de la cadena. Parte del estándar ECMAScript 5.
+String.prototype.trimStart() (en-US)
+Recorta los espacios en blanco desde el principio de la cadena.
+String.prototype.trimEnd()
+Recorta los espacios en blanco del final de la cadena.
+String.prototype.valueOf()
+Devuelve el valor primitivo del objeto especificado. Redefine el método Object.prototype.valueOf().
+String.prototype.@@iterator() (en-US)
+Devuelve un nuevo objeto Iterator que itera sobre los puntos de código de un valor de cadena, devolviendo cada punto de código como un valor de cadena.
+Métodos de contenedor HTML
+Desaprobado. Evita estos métodos.
+
+Son de uso limitado, ya que proporcionan solo un subconjunto de las etiquetas y atributos HTML disponibles.
+
+String.prototype.anchor()
+<a name="name"> (hipertexto destino)
+String.prototype.big()
+<big>
+String.prototype.blink()
+<blink>
+String.prototype.bold()
+<b>
+String.prototype.fixed()
+<tt>
+String.prototype.fontcolor()
+<font color="color">
+String.prototype.fontsize()
+<font size="size">
+String.prototype.italics()
+<i>
+String.prototype.link()
+<a href="url"> (enlace a URL)
+String.prototype.small()
+<small>
+String.prototype.strike()
+<strike>
+String.prototype.sub()
+<sub>
+String.prototype.sup()
+<sup>
+Ejemplos
+Conversión de cadenas
+Es posible usar String como una alternativa más confiable de toString(), ya que funciona cuando se usa en null, undefined y en símbolos. Por ejemplo:
+
+let outputStrings = []
+for (let i = 0, n = inputValues.length; i < n; ++i) {
+  outputStrings.push(String(inputValues[i]));
+}
