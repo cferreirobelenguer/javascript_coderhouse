@@ -1,0 +1,98 @@
+
+
+
+<!--He creado una ficha de trabajadores, en la que figuran los nombres , dni y años cotizados en la seguridad social. 
+Para calcular el dni he creado números aleatorios y la letra se asigna en función de la posición según la tabla de asignación de letras del dni español, 
+también he ordenado los años cotizados de menor a mayor .
+Por último recorro el array y  muestro por consola los años cotizados ordenados de menor antigüedad a mayor.-->
+
+
+<!Doctype html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            
+            function Dni(){
+            let DniTotal="";
+            let numero=0;
+            let dni="";
+            let dniNumero;
+                let contador=0;
+                //Se crea el dni con 8 dígitos
+                while(contador<8){
+                    numero=Math.floor(Math.random()*(9-1)+1);
+                    dniNumero=numero.toString();
+                    dni+=dniNumero;
+                    contador++;
+                }
+                //Para asignar la letra en España se divide el número de dni entre 23,
+                //el resto es la posición que hay que coger del array de letras
+                let posicion=numero%23;
+                let ListaLetras=["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"];
+                let letra=ListaLetras[posicion];
+                DniTotal=dni+letra;
+                return DniTotal;
+
+            }
+            
+            let dni1=Dni();
+            let dni2=Dni();
+            let dni3=Dni();
+            let dni4=Dni();
+            //array de objetos con datos de trabajadores, dni y años cotizados
+            const trabajador1={nombre:"Pedro López Pérez",dni:dni1,años:6};
+            const trabajador2={nombre:"Esther Martín Gutierrez",dni:dni2,años:12};
+            const trabajador3={nombre:"Pablo Martinez Almeida",dni:dni3,años:45};
+            const trabajador4={nombre:"Erika López Gallardo",dni:dni4,años:2};
+           
+            
+            const trabajadores=[trabajador1,trabajador2,trabajador3,trabajador4];
+            //Los años cotizados de los trabajadores ordenados;
+             trabajadores.sort(function(a,b){
+                return (a.años-b.años)
+            });
+
+            //Se muestra la info de los trabajadores por consola
+            console.log("FICHA DE TRABAJADORES");
+            console.log("______________________");
+            
+            alert("Se muestra por consola los datos del primer trabajador");
+            console.log("FICHA TRABAJADOR NÚMERO 1");
+            console.log("Nombre/Apellidos: "+trabajador1.nombre);
+            console.log("Documento Nacional de Identidad: "+trabajador1.dni);
+            console.log("Años de cotización a la Seguridad Social: "+trabajador1.años+" años\n");
+            console.log("______________________");
+            
+            alert("Se muestra por consola los datos del segundo trabajador");
+            console.log("FICHA TRABAJADOR NÚMERO 2");
+            console.log("Nombre/Apellidos: "+trabajador2.nombre);
+            console.log("Documento Nacional de Identidad: "+trabajador2.dni);
+            console.log("Años de cotización a la Seguridad Social: "+trabajador2.años+" años\n");
+            console.log("______________________");
+            
+            alert("Se muestra por consola los datos del tercer trabajador");
+            console.log("FICHA TRABAJADOR NÚMERO 3");
+            console.log("Nombre/Apellidos: "+trabajador3.nombre);
+            console.log("Documento Nacional de Identidad: "+trabajador3.dni);
+            console.log("Años de cotización a la Seguridad Social: "+trabajador3.años+" años\n"); 
+            console.log("______________________");
+
+            alert("Se muestra por consola los datos del cuarto trabajador");
+            console.log("FICHA TRABAJADOR NÚMERO 4");
+            console.log("Nombre/Apellidos: "+trabajador4.nombre);
+            console.log("Documento Nacional de Identidad: "+trabajador4.dni);
+            console.log("Años de cotización a la Seguridad Social: "+trabajador4.años+" años\n");
+            console.log("______________________");
+            alert("Se muestra por consola los años cotizados de los trabajadores de menor a mayor antiguedad");
+            console.log("AÑOS DE COTIZACIÓN DE LOS TRABAJADORES REGISTRADOS EN LA BBDD, ORDENADOS DE MAYOR A MENOR");
+            //Se muestran los años ordenados de menor a mayor por consola
+            console.log(trabajadores);
+                    for(let i of trabajadores){
+                        console.log(i.años+" años");
+                    }
+           
+        </script>
+    </body>
+    </html>
