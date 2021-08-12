@@ -165,6 +165,71 @@ localStorage.clear()    //elimina toda la información
 sessionStorage.clear() //elimina toda la información
 
 
+EJEMPLO
+_______
+
+
+//Pedir nombre y apellido del usuario por prompt, guardarlos en el sessionStorage y mostrarlos con alert
+
+let nombre=prompt("Introduce nombre");
+
+sessionStorage.setItem("nombre",nombre);
+
+
+
+let apellido=prompt("Introduce apellido");
+
+sessionStorage.setItem("apellido",apellido);
+alert("El nombre introducido es "+sessionStorage.getItem("nombre")+" "+sessionStorage.getItem("apellido"));
+
+
+
+PRÁCTICA
+_________
+
+
+//LocalStorage (guarda info indefinidamente en el navegador)
+localStorage.setItem("color","celeste");
+let datoLocalSt=localStorage.getItem("color");
+
+
+//Mostramos la información por consola
+console.log(datoLocalSt+" es un "+typeof datoLocalSt);
+
+
+localStorage.setItem("edad",45);
+let numueroLocalSt=localStorage.getItem("edad");
+console.log(numueroLocalSt+" es un "+typeof datoLocalSt);
+//Muestra el resultado como un String ya que los datos almacenados en localStorage son String
+
+
+//SessionStorage (guarda la info hasta que se cierra la pestaña)
+sessionStorage.setItem("vendido",false);
+let estado=sessionStorage.getItem("vendido");
+console.log(estado+" es un "+typeof datoLocalSt);
+
+
+let cantidadElementos=sessionStorage.length;
+console.log(cantidadElementos);
+
+
+for(let i=0;i<cantidadElementos;i++){
+    let clave=sessionStorage.key(i); 
+    //el método key nos dice el nombre de la clave
+    //necesitamos saber la clase, porque sin ella no podemos acceder al valor
+    console.log("Clave: "+clave);
+    console.log("Valor: "+sessionStorage.getItem(clave));
+
+}
+
+//remover un dato del storage
+localStorage.removeItem("edad");
+
+//Estamos eliminando el localstorage de edad 45
+
+//borrar todo
+localStorage.clear();
+
 
 
 
