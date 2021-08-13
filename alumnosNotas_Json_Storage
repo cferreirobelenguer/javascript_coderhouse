@@ -1,0 +1,84 @@
+
+/* Realiza un algoritmo que almacene información en Storage y guarde un array de objetos en formato JSON.
+Deberá cumplir los siguientes requisitos:
+Almacenar en Storage información ingresada por el usuario. Puede ser un texto, números, o combinación. Luego mostrarla mediante alert o console.
+Declarar un array de objetos (literales, con funciòn constructora o con clases) y almacenar el array en formato JSON en el storage.
+Cuentas con 40 minutos para hacer la actividad.
+*/
+
+
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        
+
+class Alumnos{
+    constructor(obj){
+        this.nombre=this.nombre;
+        this.nota=this.nota;
+    }
+    verNombre(){
+        this.nombre=prompt("Indique el nombre del alumno");
+        
+        return this.nombre;
+    }
+    verNota(){
+        this.nota=prompt("Indique la nota del alumno");
+        return this.nota;
+    }
+}
+
+alumnoprimer=new Alumnos();
+alumnosegun=new Alumnos();
+alumnotercer=new Alumnos();
+alumnocuatro=new Alumnos();
+
+notaprimer=new Alumnos();
+notasegun=new Alumnos();
+notatercer=new Alumnos();
+notacuatro=new Alumnos();
+let alumno1="";
+let alumno2="";
+let alumno3="";
+let alumno4="";
+let nota1="";;
+let nota2="";
+let nota3="";
+let nota4="";
+
+alumno1=alumnoprimer.verNombre();
+alumno2=alumnosegun.verNombre();
+alumno3=alumnotercer.verNombre();
+alumno4=alumnocuatro.verNombre();
+
+nota1=notaprimer.verNota();
+nota2=notasegun.verNota();
+nota3=notatercer.verNota();
+nota4=notacuatro.verNota();
+
+const alumnosNotas = [ { id: 1,  alumno: alumno1, nota: nota1},
+                    {  id: 2,  alumno: alumno2, nota: nota2 },
+                    {  id: 3,  alumno: alumno3, nota: nota3},
+                    {  id: 4,  alumno: alumno4, nota: nota4}];
+
+//Recorremos el array de alumnos
+for(let i=0;i<alumnosNotas.length;i++){
+    console.log(alumnosNotas[i]);
+}
+//Creamos función para guardar datos de forma local en localStorage
+const guardaLocal=(clave,valor)=>{
+    localStorage.setItem(clave,valor);
+}
+//Al tratarse de objetos usamos JSON.stringify para recorrer con for el array y guardar cada uno de los objetos
+for(const i of alumnosNotas){
+    guardaLocal(alumnosNotas.id,JSON.stringify(alumnosNotas));
+}
+    </script>
+</body>
+</html>
