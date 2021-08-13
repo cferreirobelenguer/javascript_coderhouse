@@ -1,4 +1,93 @@
+DOCUMENTO HTML
+______________
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bicicleta</title>
+</head>
+<body>
+<script>
+    
+
+//Crear la clase "Bicicleta" con las siguientes propiedades: 
+//marca, color, condicion, precio y al menos un método 
+//que muestre los datos de la misma.  
+//Luego solicitar al usuario por prompt los valores de esas propiedades 
+//y crear un objeto de tipo Bicicleta llamado bici1 con esa información.  
+//ATENCION :marca:La bicicletería solo comercializa marca "RALEIGH" Y "OLMO", 
+//antes de crear el objeto validar que la marca es una de esas dos,
+// caso contrario mostrar un mensaje de error y no crearlo.
+
+
+class bicicleta{
+    
+    constructor(marca, color,condicion,precio){
+
+        
+        this.marca=marca;
+        this.color=color;
+        this.condicion=condicion;
+        this.precio=precio;
+        
+
+    }
+   
+    //Se pide al usuario los datos del color de la bici
+    setColor(){
+        this.color=prompt("Indique el color de la bici");
+        alert("El color modifcado es: "+this.color);
+    }
+    //Se pide al usuario los datos de la condicion de la bici
+    setCondicion(){
+        this.condicion=prompt("Indique la condición de la bici");
+        return this.condicion;
+    }
+    //Se pide al usuario los datos del precio de la bici
+    setPrecio(){
+        this.precio=prompt("Indique el precio de la bici");
+        return this.precio;
+    }
+    //Se pide al usuario los datos de la marca
+    //Tiene que ser raleigh o olmo, si es sí se muestran todos los datos; si no se muestra mensaje de error.
+    setMarca(){
+        this.marca=prompt("Indique la marca de la bicicleta");
+        if(((this.marca=="RALEIGH")||(this.marca=="raleigh"))||((this.marca=="OLMO")||(this.marca=="olmo"))){
+         this.marca=this.marca; 
+         alert("Bicicleta modelo: "+this.marca+"\nColor: "+this.color+"\nCondición: "+this.condicion+"\nPrecio: "+this.precio+" euros");
+        }else{
+            alert("La marca indicada no se encuentra en nuestras bbdd");
+        return;
+        }
+        
+    }
+    
+}
+//Creación del objeto con valores predeterminados que posteriormente van a ser modificados por métodos
+const bici1=new bicicleta("Domyos","rojo","montaña","200");
+document.write("<h1>BIENVENIDO A LA FICHA DE LA BICICLETA</h1>\n")
+document.write("<h1>A continuacion se muestran por consola los datos de la bicicleta</h1>\n")
+alert("A continuacion se muestran por consola los datos de la bicicleta");
+bici1.setColor();
+bici1.setCondicion();
+bici1.setPrecio();
+bici1.setMarca();
+</script>
+</body>
+<!--BOTONES DE MENÚ DE BICICLETA PARA SABER LOS DATOS-->
+<input type="button" value="Seleccione color" onclick="bici1.setColor();"/>
+<input type="button" value="Seleccione condicion" onclick="bici1.setCondicion();"/>
+<input type="button" value="Seleccione precio" onclick="bici1.setPrecio();"/>
+<input type="button" value="Seleccione marca" onclick="bici1.setMarca();"/>
+
+</html>
+
+
+
+
+
+DOCUMENTO JS
+____________
 
 //Crear la clase "Bicicleta" con las siguientes propiedades: 
 //marca, color, condicion, precio y al menos un método 
