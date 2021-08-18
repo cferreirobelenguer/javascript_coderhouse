@@ -358,4 +358,137 @@ for (const producto of productos) {
 
 
 
+
+
+
+EJEMPLOS:
+__________
+
+
+//DOM
+
+console.dir(document.body);
+
+//Con ID, asociar html a javascript
+
+//Señalamos a una parte del documento
+let seccionSuperior=document.getElementById("superior");
+console.log(parrafo.innerHTML); //Pide el código html de una sección en js
+
+console.log(seccionSuperior.innerText); //Coge todos los elementos de texto de html
+
+//Tomamos el control sobre un elemento de html
+seccionSuperior.style.background="grey";
+
+//Accedemos a una etiqueta y su texto
+let vinculo=document.getElementById("colores");
+//Cambiamos la tipografía
+console.log(vinculo.innerText);
+vinculo.style.font="italic bold 20px arial";
+
+function cambiarVinculo(){
+    vinculo.innerText=prompt("Ingrese el texto del link");
+    //Cambia el contenido del link
+}
+
+function activarParrafos(){
+    let parrafos=document.getElementsByTagName("p");
+    parrafos[0].style.background="green";
+    parrafo[1].innerText="Cambio del contenido";
+
+    for(const parrafo of parrafos){
+        console.log(parrafo.innerText);
+    }
+
+}
+
+activarParrafos();
+
+
+//AGREGAR ELEMENTOS:
+
+//create Element y append child
+//Estamos creando un h1 y lo asignamos a sessionSuperior que va a ser el padre
+var tit=document.createElement("h1");
+tit.innerText="Hola soy un título dinámico";
+seccionSuperior.appendChild(tit);
+
+
+//CREAR ATRIBUTOS EN EL ELEMENTO:
+//Creamos un atributo h1 class="dinamica"
+tit.setAttribute("class","dinamica");
+
+//SACAR ELEMENTOS ,ELIMINARLOS
+
+let parrafo=document.getElementById("parrafo1");
+parrafo.parentNode.removeChild(parrafo);
+
+tit.parentNode.removeChild(tit);
+
+//OBTENER DATOS DE UN INPUT:
+//.value
+
+document.getElementById("nombre").value="LAU";
+document.getElementById("edad").value=45;
+
+//CREA UN ARRAY DE LOS DATOS INGRESADOS
+let datosIngresados=[];
+datosIngresados[0]=document.getElementById("nombre").value;
+console.log(datosIngresados[0]);
+
+//Plantillas literales
+
+const productos = [{ id: 1,  nombre: "Arroz", precio: 125 },
+                  {  id: 2,  nombre: "Fideo", precio: 70 },
+                  {  id: 3,  nombre: "Pan"  , precio: 50},
+                  {  id: 4,  nombre: "Flan" , precio: 100}];
+                  
+                  
+
+for (const producto of productos) {
+    let contenedor = document.createElement("div");
+    //Definimos el innerHTML del elemento con una plantilla de texto
+    contenedor.innerHTML = `<h3> ID: ${producto.id}</h3>
+                            <p>  Producto: ${producto.nombre}</p>
+                            <b> $ ${producto.precio}</b>`;
+    document.body.appendChild(contenedor);
+
+//Formato tabla para ver carrito
+
+
+const productos = [{ id: 1,  nombre: "Arroz", precio: 125 },
+                  {  id: 2,  nombre: "Fideo", precio: 70 },
+                  {  id: 3,  nombre: "Pan"  , precio: 50},
+                  {  id: 4,  nombre: "Flan" , precio: 100}];
+
+let mi_tabla=document.createElement("table");
+//Instalamos un formato de tabla de bootstrap a la tabla con setStribute en el class
+mi_tabla.setAttribute("class","table table-striped");
+let mi_tabla_body=document.createElement("tbody");
+
+for(const producto of productos){
+    let mi_fila=document.createElement("tr");
+    let mi_celda=document.createElement("td");
+    mi_celda.innerText=producto.id;
+    mi_fila.appendChild(mi_celda);
+
+    let mi_celda2=document.createElement("td");
+    mi_celda2.innerText=producto.nombre;
+    mi_fila.appendChild(mi_celda2);
+
+    let mi_celda3=document.createElement("td");
+    mi_celda3.innerHTML=`<b>$ ${producto.precio}</b>`;
+    mi_fila.appendChild("mi_celda3");
+
+    //Terminamos de armar la fila
+    mi_tabla_body.appendChild(mi_fila);
+
+}
+
+mi_tabla.appendChild(mi_tabla_body);
+//ASIGNAMOS LA TABLA A UNA SECCIÓN DEL HTML
+document.getElementById("inferior").appendChild(mi_tabla);
+
+
+
  
