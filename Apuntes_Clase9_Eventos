@@ -304,3 +304,87 @@ evitando la llamada mediante document.getElementById("formulario") para obtener 
 
 
 
+
+
+EJEMPLOS
+__________
+
+
+
+//EVENTOS
+
+
+let boton=document.getElementById("miBoton");
+boton.addEventListener("click",interactuar);
+
+function interactuar(){
+    let nombre=prompt("Ingrese tu nombre");
+    let fecha=new Date();
+    alert("Hola "+nombre+" te informo que hoy es "+fecha);
+}
+
+//OPCION 2
+
+boton.onclick=() =>console.log("Se registró un click");
+boton.onmouseover=()=> {console.log("No me toques");}
+
+//EVENTOS DE TECLADO
+
+let campoEdad=document.getElementById("edad");
+campoEdad.onkeydown=()=>{console.log("Presionaste una tecla");}
+campoEdad.onkeyup=()=>{console.log("Soltaste una tecla");}
+
+//EVENTO SUBMIT
+
+let formulario=documento.getElementById("formulario");
+formulario.addEventListener("submit",validarFormulario);
+
+function validarFormulario(e){
+    e.preventDefault(); //evita que se borren todos los campos, que es la acción por defecto
+    if(isNan(campoEdad.value)){ //true si el campo edad es número y false si no
+        console.log("Ingrese un número en el campo edad");
+    }
+
+}
+
+//EVENTO CLIPBOARD 
+//Con este evento se puede ver cuánta gente hace copias del contenido
+
+let textoCopia=document.getElementsByClassName("textoP");
+textoCopia[0].addEventListener("copy",imprimirAlerta);
+
+function imprimirAlerta(){
+    console.log("Copia de texto detectada!!!");
+}
+
+
+//Evento llamado desde el html, por cambio de estado del input de edad
+
+function activarValidador(entrada){
+    let edadInput=entrada.value;
+    if(edadInput<1||edadInput>100){
+        alert("Edad inválida");
+
+    }
+}
+//En el formulario de html se llama así:
+//<input id="edad" type="text" placeholder="ingresa tu edad" onclange="activarValidador(this)">
+
+
+//EVENTO DE TECLADO DETECTANDO LA TECLA ENTER
+
+function capturarEnter(e){
+    if(e.which==13||e.keyCode==13){
+        alert("Presionaste el ENTER");
+
+    }
+}
+// En el input del formulario html se llama así"onkeypress="capturarEnter(event)"
+
+
+
+//Evento de ventana
+//Indica que la ventana del navegador se ha cargado
+window.onload=()=>{console.log("Ventana cargada")};
+
+
