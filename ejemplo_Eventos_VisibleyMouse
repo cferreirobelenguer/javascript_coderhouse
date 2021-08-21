@@ -1,0 +1,46 @@
+
+
+//EJEMPLOS DE EVENTOS VISIBLES Y NO VISIBLES
+
+//planes de pago
+let botonPlanes = document.getElementById("planes");
+let planesVisible = false; //estado inicial del div
+botonPlanes.onclick = () => {
+    //muestraOculta(el div que quiero mostrar u ocultar, estado visible o invisible del div)
+    muestraOculta("infoPlanes", planesVisible);
+    planesVisible = !planesVisible; //si era false pasa a true y viceversa
+}
+
+//funcion muestraOculta
+function muestraOculta(nombre, visibilidad) {
+    let elemento = document.getElementById(nombre);
+    if (visibilidad == false) {
+        if (elemento.classList.contains('oculto')) {
+            elemento.classList.remove('oculto');
+        }
+        elemento.className += " visible"; //agregar esa clase al final de la lista de clases del html
+    } else {
+        if (elemento.classList.contains('visible')) {
+            elemento.classList.remove('visible');
+        }
+        elemento.className += " oculto"; //agregar esa clase al final de la lista de clases del html
+    }
+}
+
+//la empresa
+let botonEmpresa = document.getElementById("empresa");
+let empresaVisible = false; //estado inicial del div
+botonEmpresa.onclick = () => {
+    //muestraOculta(el div que quiero mostrar u ocultar, estado visible o invisible del div)
+    muestraOculta("infoEmpresa", empresaVisible);
+    empresaVisible = !empresaVisible; //si era false pasa a true y viceversa
+}
+
+//EJEMPLO DE EVENTO QUE CAMBIA DE COLOR EL FONDO SI SE PASA CON EL MOUSE
+
+//cambiar color de fondo de las cards... utilizo la clase "cartas"
+let cartas = document.getElementsByClassName("cartas");
+for (let carta of cartas) {
+    carta.onmouseover = () => { carta.style.background = "lightgrey"; };
+    carta.onmouseout = () => { carta.style.background = "white"; };
+}
