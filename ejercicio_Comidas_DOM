@@ -1,0 +1,88 @@
+
+<!--SE CREAN TRES PLATOS CON SUS INGREDIENTES Y PRECIOS EN UN ARRAY DE OBJETOS, EN FUNCIÓN DEL PLATO QUE ELIJA EL USUARIO
+APARECE MEDIANTE DOM EN HTML LA INFORMACIÓN DEL PLATO CON SUS INGREDIENTES Y PRECIO-->
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cocina</title>
+        <meta charset="UTF-8">
+
+    </head>
+    <body>
+        <section id="superior">
+
+        </section>
+        <script>
+                const cocina=[{plato:"paella",ingredientes:"arroz,pollo,marisco",precio_menu:"15"},
+                             {plato:"cocido",ingredientes:"caldo de pollo,huesos de jamón,fideos,garbanzos,patata",precio_menu:"20"},
+                             {plato:"risotto",ingredientes:"arroz,champiñones,setas,nata",precio_menu:"12"}];
+
+                let ingrese_plato=prompt("Ingrese un plato [paella,cocido,risotto]");
+
+                if ((ingrese_plato=="paella")||(ingrese_plato=="PAELLA")||(ingrese_plato=="Paella")){
+                    let seccionSuperior=document.getElementById("superior");
+                    let menu_Elegido=document.createElement("h1");
+                    menu_Elegido.innerText=("Usted ha elegido el siguiente menú: ");
+                    seccionSuperior.appendChild(menu_Elegido);
+
+                    let espacio=document.createElement("br");
+                    seccionSuperior.appendChild(espacio);
+
+                    let menu=document.createElement("div");
+                    menu.setAttribute("class","menu");
+                    menu.innerHTML=`<h2>${cocina[0].plato}</h2>
+                                    <h3>${cocina[0].ingredientes}</h3>
+                                    <p>${cocina[0].precio_menu} €</p>`;
+                    seccionSuperior.appendChild(menu);
+
+                }else if((ingrese_plato=="cocido")||(ingrese_plato=="COCIDO")||(ingrese_plato=="Cocido")){
+                    let seccionSuperior=document.getElementById("superior");
+                    let menu_Elegido2=document.createElement("h1");
+                    menu_Elegido2.innerText=("Usted ha elegido el siguiente menú: ");
+                    seccionSuperior.appendChild(menu_Elegido2);
+
+                    let espacio2=document.createElement("br");
+                    seccionSuperior.appendChild(espacio2);
+                    
+                    let menu2=document.createElement("div");
+                    menu2.setAttribute("class","menu2");
+                    menu2.innerHTML=`<h2>${cocina[1].plato}</h2>
+                                     <h3>${cocina[1].ingredientes}</h3>
+                                     <p>${cocina[1].precio_menu} €</p>`;
+                    seccionSuperior.appendChild(menu2);
+                
+
+                }else if((ingrese_plato=="risotto")||(ingrese_plato=="RISOTTO")||(ingrese_plato=="Risotto")){
+                    let seccionSuperior=document.getElementById("superior");
+                    let menu_Elegido3=document.createElement("h1");
+                    menu_Elegido3.innerText=("Usted ha elegido el siguiente menú: ");
+                    seccionSuperior.appendChild(menu_Elegido3);
+
+                    let espacio3=document.createElement("br");
+                    seccionSuperior.appendChild(espacio3);
+
+                    let menu3=document.createElement("div");
+                    menu3.setAttribute("class","menu3");
+                    menu3.innerHTML=`<h2>${cocina[2].plato}</h2>
+                                     <h3>${cocina[2].ingredientes}</h3>
+                                     <p>${cocina[2].precio_menu} €</p>`;
+                    seccionSuperior.appendChild(menu3);
+                }else{
+                    let seccionSuperior=document.getElementById("superior");
+                    let opcion_noValida=document.createElement("h1");
+                    opcion_noValida.innerText=("Usted ha elegido una opción no válida ");
+                    seccionSuperior.appendChild(opcion_noValida);
+                }
+
+
+                
+
+
+                
+                        
+        </script>
+    </body>
+</html>
