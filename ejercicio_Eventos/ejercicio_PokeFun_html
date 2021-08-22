@@ -1,0 +1,184 @@
+
+<!DOCTYPE html">
+<html>
+<head>
+<meta charset=utf-8">
+
+<!--Titulo de la página-->
+<title>Poke Fun restaurante</title>
+<!--Responsive-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!--bootstrap CSS-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<!-- bootstrap responsive-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    
+    <!--CSS-->
+     <link href="estilos/poke_Fun.css" rel="stylesheet" type="text/css">
+
+	<!--favicon-->
+	<link href="imagenes/logo_poke_fun.png" rel="shortcut icon" type="image/x-icon">
+</head>
+
+<body>
+	<!--JQUERY bootstrap-->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity=				"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	
+ 
+	<div class="container-fluid">
+	<header>
+    
+    <center>
+    <div class="encabezado">
+    	<p> <img src="imagenes/envio.png" width="36" height="39" class="img-fluid" alt="Responsive image">&nbsp;&nbsp;&nbsp;&nbsp;Comida a domicilio</p>
+    </div>
+    </center>
+    
+   <div class="encabezado1">
+    <center>
+   <img src="imagenes/poke_fun.png" width="223" height="182" class="img-fluid" alt="Responsive image">
+   </center>
+   </div>
+    
+    <!--Barra de navegación-->
+   
+    </header>
+    <main>
+        <br>
+        <hr>
+        <br>
+    </center>
+    </div>
+    <div class="portada">
+    	<center>
+    	  <img src="imagenes/portada_pokefun.png" alt="Responsive image" width="1220" height="610" class="img-fluid">
+    	</center>
+        <br>
+        <hr>
+        <br>
+    </div>
+    
+    <div class="portada2">
+        
+            <br>
+        <center>
+        
+            
+            
+            <div class="row">
+                
+                <div class="col-6 white">
+                    <div class="mycontent-left">
+                    <br>
+                    
+                    <br>
+                    <h1>El placer de comer sano</h1>
+                    <br>
+                    <br>
+                    <p>Todos nuestros platos son saludables</p> 
+                    <p>¿Qué te apetece hoy?</p>
+                    <br>
+                </div>
+            
+                </div>
+                <div class="col-6 white">
+                    <div class="mycontent-right">
+                    <video src="imagenes/poke.mp4" width="370" height="300" autoplay muted loop alt="Responsive image"  class="img-fluid"></video>
+                    
+                    </div>
+                </div>
+        
+             <div class="encabezado2">
+        <center>
+        
+            <br>
+            <div class="infoMenu" id="boton1" style="display:none"></div>
+            <input type=button id="menu"  style="background-color:#ffa3a3" onclick="menu1()" value="Descubre nuestros platos"/>
+            
+            <br>
+            <section id="boton" >
+
+            </section>
+            
+            
+                <br>
+                
+    
+            </section>
+            </div>
+            <br>
+            <hr>
+        </center>
+        </div>
+   <div class="final">
+   
+    	<center>
+            <br>
+			
+            <hr>
+            <br>
+    		<h3>Estamos en:</h3>
+            <br>
+			<h3>Madrid - Barcelona - Bilbao - Valencia - Mallorca- Vigo- Pamplona - Terrassa - Girona- Zaragoza</h3>
+            <br>
+            <hr>
+            <br>
+            
+    	</center>
+   
+    </div>
+    
+    </main>
+    
+    <footer>
+    
+    	<div class="encabezado1">
+    		<center>
+            	<br>
+   				<img src="imagenes/poke_fun.png" width="191" height="211" class="img-fluid" alt="Responsive image">
+                <br>
+                
+                 <center>
+                 <img src="imagenes/correo.gif" width="68" height="68" class="img-fluid" alt="Responsive image"> 
+                 <br>
+                 <p>Puedes contactarnos en </p>
+			Pokefun@gmail.com<br>
+            	</center>
+           	  <br>
+                
+              <div class="copyright">
+                 	<center>
+					<small>&copy; 2021 PokeFun/Todos los derechos Reservados</small>
+                    </center>
+        		
+        		
+			  </div>
+                
+                 <div class="social">
+                 <br>
+                 	<p ><font color="black">Síguenos en</font></p>
+                    
+               	   <br>
+						<a href="#"><img src="imagenes/facebook.png" alt="facebook" class="img-fluid" alt="Responsive image"></a>&nbsp;&nbsp;
+						<a href="#"><img src="imagenes/youtube.png" alt="youtube" class="img-fluid" alt="Responsive image"></a>&nbsp; &nbsp;
+						<a href="#"><img src="imagenes/linkedin.png" alt="linkedin" class="img-fluid" alt="Responsive image"></a>&nbsp; &nbsp;
+						<a href="#"><img src="imagenes/instagram.png" alt="instagram" class="img-fluid" alt="Responsive image"></a>&nbsp; &nbsp;
+						<a href="#"><img src="imagenes/twitter.png" alt="twitter" class="img-fluid" alt="Responsive image"></a>
+                    <br>
+                	<br>  
+                    <br>
+                    
+			  </div>
+                
+   			</center>
+                <!--SCRIPT JS MENÚS-->
+  <script src="pokefunJs.js"></script>
+    	</div>
+    </footer>
+    </div>
+</body>
+</html>
