@@ -1,0 +1,192 @@
+
+//Cambia de color cuando acerco ratón en botón
+
+function mensajeBienvenida(){
+    let boton4=document.getElementById("menu");
+    boton4.onmouseover=()=>{boton4.style.background="#e6f6a7";};  
+    
+}
+//Cambia a su color original cuando alejo ratón en botón
+function mensajeDespedida(){
+    let boton5=document.getElementById("menu");
+    boton5.onmouseout=()=>{boton5.style.background="#ffa3a3"};
+    
+}
+
+function menu1(){
+
+    //Carta de platos del restaurante dentro del botón
+
+    let menu=document.getElementById("boton");
+
+    menu.style.background="#e6f6a7";
+    menu.style.color="black";
+    menu.style.padding="50px";
+    menu.style.fontSize="30px";
+    menu.style.marginLeft="80px";
+    menu.style.marginRight="80px";
+
+    let espacio=document.createElement("hr");
+    menu.appendChild(espacio);
+
+    
+    let imagen1=document.createElement("img");
+    imagen1.setAttribute("src","imagenes/healthy_mix.jpg");
+    imagen1.setAttribute("class","img-fluid");
+    imagen1.setAttribute("alt","Responsive image");
+    imagen1.setAttribute("width","250");
+    imagen1.setAttribute("height","150");
+    menu.appendChild(imagen1);
+
+    let espacio2=document.createElement("hr");
+    menu.appendChild(espacio2);
+    
+    let carta=document.createElement("div");
+    
+    menu.setAttribute("class","menu");
+    menu.setAttribute("id","uno");
+    
+    carta.innerHTML=`<h2>${menus[0].nombre}</h2>
+                     <p>${menus[0].descripcion}</p>
+                     <h3>${menus[0].precio} €</h3>`;
+    
+    
+    menu.appendChild(carta);
+    
+    
+
+    let espacio3=document.createElement("hr");
+    menu.appendChild(espacio3);
+
+    let imagen2=document.createElement("img");
+    imagen2.setAttribute("src","imagenes/salmon_guacamole.jpg");
+    imagen2.setAttribute("class","img-fluid");
+    imagen2.setAttribute("alt","Responsive image");
+    imagen2.setAttribute("width","250");
+    imagen2.setAttribute("height","150");
+    menu.appendChild(imagen2);
+
+    
+    let espacio4=document.createElement("hr");
+    menu.appendChild(espacio4);
+
+    let carta2=document.createElement("div");
+    menu.setAttribute("class","menu");
+    menu.setAttribute("id","uno");
+    carta2.innerHTML=`<h2>${menus[1].nombre}</h2>
+                     <p>${menus[1].descripcion}</p>
+                     <h3>${menus[1].precio} €</h3>`;
+
+    
+    menu.appendChild(carta2);
+
+   
+
+    let espacio5=document.createElement("hr");
+    menu.appendChild(espacio5);
+
+    let imagen3=document.createElement("img");
+    imagen3.setAttribute("src","imagenes/hummus_de_Edamame.jpg");
+    imagen3.setAttribute("class","img-fluid");
+    imagen3.setAttribute("alt","Responsive image");
+    imagen3.setAttribute("width","250");
+    imagen3.setAttribute("height","150");
+    menu.appendChild(imagen3);
+
+    let espacio6=document.createElement("hr");
+    menu.appendChild(espacio6);
+
+    let carta3=document.createElement("div");
+    menu.setAttribute("class","menu");
+    menu.setAttribute("id","uno");
+    carta3.innerHTML=`<h2>${menus[2].nombre}</h2>
+                     <p>${menus[2].descripcion}</p>
+                     <h3>${menus[2].precio} €</h3>`;
+    menu.appendChild(carta3);
+
+    
+
+    let espacio7=document.createElement("hr");
+    menu.appendChild(espacio7);
+
+    let imagen4=document.createElement("img");
+    imagen4.setAttribute("src","imagenes/healthy_premium.jpg");
+    imagen4.setAttribute("class","img-fluid");
+    imagen4.setAttribute("alt","Responsive image");
+    imagen4.setAttribute("width","250");
+    imagen4.setAttribute("height","150");
+    menu.appendChild(imagen4);
+    
+
+    let espacio8=document.createElement("hr");
+    menu.appendChild(espacio8);
+
+    let carta4=document.createElement("div");
+    menu.setAttribute("class","menu");
+    menu.setAttribute("id","uno");
+    carta4.innerHTML=`<h2>${menus[3].nombre}</h2>
+                     <p>${menus[3].descripcion}</p>
+                     <h3>${menus[3].precio} €</h3>`;
+    menu.appendChild(carta4);
+
+    let espacio9=document.createElement("hr");
+    menu.appendChild(espacio9);
+
+    
+
+    let imagen5=document.createElement("img");
+    imagen5.setAttribute("src","imagenes/tartar_salmon.jpg");
+    imagen5.setAttribute("class","img-fluid");
+    imagen5.setAttribute("alt","Responsive image");
+    imagen5.setAttribute("width","250");
+    imagen5.setAttribute("height","150");
+    menu.appendChild(imagen5);
+  
+    let espacio10=document.createElement("hr");
+    menu.appendChild(espacio10);
+
+    let carta5=document.createElement("div");
+    menu.setAttribute("class","menu");
+    menu.setAttribute("id","uno");
+    carta5.innerHTML=`<h2>${menus[4].nombre}</h2>
+                     <p>${menus[4].descripcion}</p>
+                     <h3>${menus[4].precio} €</h3>`;
+    menu.appendChild(carta5);
+
+    document.getElementById("menu").setAttribute("disabled","disabled");
+
+
+}
+
+
+
+//Todos los datos de la carta de menús de pokefun
+
+const menus=[{nombre:"Healthy Mix",descripcion:"Arroz, salmón y atún, cebolla, aguacate, alga wakame, semillas de sésamo y salsa spicy mayo",precio:"6,99"},
+            {nombre:"Healthy Salmón & Guacamole Poke",descripcion:"Base mixta de quinoa y arroz de sushi, salmón fresco marinado en yakiniku (barbacoa coreana) con un toque de salsa mango y curry, guacamole, edamame, piña, cacahuete, alga nori, pipas de girasol, cebollino y sésamo.",precio:"12,99"},
+            {nombre:"Hummus De Edamame",descripcion:"Riquísimo hummus elaborado a base de Edamame preparación culinaria de las vainas de soja inmaduras, acompañado de nuestros chips de plátano",precio:"4,99"},
+            {nombre:"Healthy Premium",descripcion:"Quinoa, salmón, cebolla, aguacate, edamame, tomate cherry, salsa especial",precio:"12,99"},
+            {nombre:"Tartar de salmón",descripcion:"Sutil combinación de sabores, en los que resaltan salmón marinado en soja dulce acompañado de alga wakame y nuestra salsa especial de mostaza dulce",precio:"6.99"}];
+
+let boton3=document.getElementById("menu");
+
+boton3.addEventListener("mousemove",mensajeBienvenida);
+boton3.addEventListener("mousemove",mensajeDespedida);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
