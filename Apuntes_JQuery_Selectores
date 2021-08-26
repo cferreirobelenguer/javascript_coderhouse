@@ -1,0 +1,205 @@
+
+LIBRERÍAS
+_________
+
+En JS, una librería (o biblioteca) es un archivo de JavaScript que contiene objetos y funciones programadas por terceros,
+destinada a realizar tareas específica en una aplicación o web. 
+Para conocer cómo usar una librería, debemos acceder a su documentación: un documento o página web donde se detalla cómo funciona cada elemento de ella.
+
+
+JQUERY Y SELECTORES
+____________________
+
+Cuando estamos desarrollando una App o Web, podemos cargar una librería externa con el objetivo de emplear las herramientas que nos ofrece en nuestro código. 
+El proceso de referencia en el HTML es idéntico al de cualquier script JavaScript:
+
+
+<script src="js/libreria.js"></script>
+
+Tenemos dos formas de cargar una librería según el origen. Ambas son completamente válidas y no existe gran diferencia en la forma de carga entre una y otra:
+Cargar mediante URL: Cargar el archivo de la librería de forma remota, leyéndolo desde una URL.
+Cargar Localmente: Descargar el archivo a nuestro servidor y ejecutarlo localmente.
+
+
+Al cargar librerías externas, hay una práctica muy común que consiste en cargarlas en formato minificado, o minified en inglés.
+Eso significa, que el contenido del archivo JS se encuentra escrito todo en una única línea, y de corrido.
+
+Esto se usa para:
+
+Achicar el peso del archivo (al estar en una única línea se eliminan todos los saltos de línea y espacios innecesarios).
+Evitar la edición del archivo JS (es un poco incómodo poder editarlo así -aunque hoy en día existen herramientas online que desminifican un archivo).
+
+JAVASCRIPT MINIMIZADO
+_____________________
+
+Por lo general, todas las librerías suelen ofrecer los dos archivos para usar: el archivo .js común, y el minificado.
+
+Suele respetarse el siguiente estándar para el nombre:
+
+Archivo comun: libreria.js
+
+Archivo minificado: libreria.min.js
+
+La recomendación es usar el minificado, a menos que sea necesario hacer debug sobre los archivos de la librería.
+
+
+
+JQUERY
+______
+
+jQuery es una librería que sirve para manipular el DOM, controlar eventos, agregar animaciones y ejecutar llamadas AJAX, entre otras cosas.
+Si bien ya vimos el uso del DOM mediante las herramientas nativas de JS, lo que diferencia a jQuery es que resulta más práctico y potente, 
+además de estar más sistematizado y ordenado desde la forma en que está desarrollado.
+
+En la actualidad existen opciones más modernas que jQuery que proveen las mismas  funcionalidades que esta librería. (Incluso en las últimas versiones de JS)
+Pero su presencia en el mercado es aún significativa y existe un conjunto de tecnología en producción dependiente de esta librería, 
+lo que la transforma en una excelente candidata a ofertas laborales en migración de sistemas.
+
+JQUERY VENTAJAS:
+
+. JQuery utiliza los mismos selectores de CSS3 para operar sobre los elementos.
+. Diseño y estructura ordenada.
+. Es open source.
+. Rapidez para ejecutar y operar sobre el DOM.
+. Compatibilidad con muchos plugins. (animaciones, sliders, componentes, etcétera).
+. Facil de aprender. (4 Clases)
+
+
+
+CARGAR MEDIANTE URL:
+______________________
+
+Basta con localizar una URL de un CDN que provea la librería jQuery y cargarlo en el archivo HTML. 
+Una vez que localizamos la URL del archivo, la referenciamos en nuestro archivo HTML antes de cerrar el </body> 
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+
+
+CARGAR LOCALMENTE
+_________________
+
+Para usarlo localmente, debemos descargar el archivo .js de la página oficial de jQuery, y luego incluirlo en nuestra carpeta del proyecto.
+Finalmente, cargamos el script en el archivo html antes de cerrar el </body>
+
+<script src="js/jquery-3.5.1.min.js"></script>
+
+
+
+SELECTORES EN JQUERY
+____________________
+
+El concepto de selector es tal vez el mayor logro que introdujo jQuery. Se refiere a la forma de identificar a los diferentes elementos del DOM y poder operar sobre ellos. 
+En vez de emplear los métodos getElementById(), getElementsByClassName() y  getElementsByTagName() de document, con JQuery podemos usar un único medio para acceder al DOM. 
+
+
+Los selectores en jQuery siempre estarán escritos bajo el siguiente esquema $(‘selector’).
+Si el selector aplicado coincide con más de un elemento, quedan todos referenciados en la variable. 
+Para acceder a elementos del DOM por ID empleamos el prefijo “#” y “.” para acceso por clase.
+
+// Acceso equivalente: document.getElementById("listaPaises");
+$("#listaPaises");
+// Acceso equivalente: document.getElementsByClassName("paises")
+$(".paises");
+// Acceso equivalente: document.getElementsByTagName("li")
+$("li");
+
+
+COMBINACIÓN DE SELECTORES
+__________________________
+
+Los selectores se pueden utilizar para seleccionar cualquier elemento HTML usando su etiqueta, su clase, su ID, o la combinación de las tres.
+
+$( "div" ); 	//selecciona todos los <div> de la página
+$( "a" );		//selecciona todos los <a>
+$( "p, a" ); 	//seleccionar todas los los <p>, y los <a>
+$( "li.nombre-clase #caja" ); 
+//seleccionar todo <li> con clase "nombre-clase", y que tengan un hijo con ID "caja"
+
+
+SELECTORES AVANZADOS
+____________________
+
+$( "p:last" ); 				//Selecciona el último <p> de la página
+$( "li:first-child" ); 		//Selecciona todos los <li> que son primeros hijos
+$( "li:last-child" ); 		//Selecciona todos los <li> que son últimos hijos
+$( "li:only-child" ); 		//Selecciona todos los <li> que sean hijos únicos
+$( "li:nth-child(3)" ); 		//Selecciona todos los <li> que sean el 3er elemento 
+$( "tr:nth-child(odd)" ); 	//Selecciona todos los <tr> que sean impares
+$( "tr:nth-child(even)" ); 	//Selecciona todos los <tr> que sean pares
+$( "div:nth-child(3n)" ); 	//Selecciona cada tercer elemento <div>
+
+
+
+SELECTORES PARA FORMULARIOS
+____________________________
+
+$( ":text" );
+$( ":checkbox" );
+$( ":radio" );
+$( ":image" );
+$( ":submit" );
+$( ":reset" );
+$( ":password" );
+$( ":file" );
+$( ":input" ); 	//Selecciona los elementos input, textarea,select y button
+$( ":button" ); 	//Selecciona los elementos button e input con atributo "type"="button"
+$( ":enabled" );	//Selecciona los elementos del formulario activados
+$( ":disabled" ); 	//Selecciona los elementos del formulario desactivados
+$( ":checked" ); 	//Selecciona los radio buttons y checkboxes que están pulsados
+$( ":selected" ); 	//Elementos de una lista de opciones que este seleccionados
+
+
+AGREGAR ELEMENTOS CON JQUERY
+____________________________
+
+Una vez obtenido un el elemento del HTML con el selector es posible agregar a un nuevo elemento al DOM.
+En jQuery no es necesario crear un nodo del tipo de etiqueta con createElement().
+Podemos agregar inmediatamente la estructura HTML deseada con los métodos de la librería append() y prepend()
+
+
+/* El siguiente código es la equivalencia de creación en JS Vanilla
+var parrafo = document.createElement("p");
+parrafo.innerHTML = "<h2>¡Hola Coder!</h2>"; 
+document.body.appendChild(parrafo)
+*/
+$('body').append("<p><h2>¡Hola Coder!</h2></p>");
+
+
+JQUERY APPEND()
+________________
+El método .append() inserta el contenido especificado como último hijo del elemento seleccionado.
+
+let producto   = { id: 1,  nombre: "Arroz", precio: 125 };
+//Es posible usar plantillas de texto en el parámetro.
+$("#app").append(`<div><h3> ID: ${producto.id}</h3>
+                  <p>  Producto: ${producto.nombre}</p>
+                  <b> $ ${producto.precio}</b></div>`);
+
+JQUERY PREPEND()
+_________________
+El método .append() inserta el contenido especificado como primer hijo del elemento seleccionado.
+
+let producto2   = { id: 2,  nombre: "Flan", precio: 150 };
+//Es posible usar plantillas de texto en el parámetro.
+$("#app").prepend(`<div><h3> ID: ${producto2.id}</h3>
+                 <p>  Producto: ${producto2.nombre}</p>
+                 <b> $ ${producto2.precio}</b></div>`);
+                 
+
+EJEMPLO APLICADO: 
+AGREGANDO AL DOM DATOS DEL ARRAY CON jQUERY
+___________________________________________
+
+const productos = [{ id: 1,  nombre: "Arroz", precio: 125 },
+{  id: 2,  nombre: "Fideo", precio: 70 },
+{  id: 3,  nombre: "Pan"  , precio: 50},
+{  id: 4,  nombre: "Flan" , precio: 100}];
+
+for (const producto of productos) {
+    $("#app").append(`<div><h3> ID: ${producto.id}</h3>
+    <p>  Producto: ${producto.nombre}</p>
+    <b> $ ${producto.precio}</b></div>`);
+
+
+
