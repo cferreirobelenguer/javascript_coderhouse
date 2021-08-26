@@ -29,6 +29,10 @@ Esto se usa para:
 Achicar el peso del archivo (al estar en una única línea se eliminan todos los saltos de línea y espacios innecesarios).
 Evitar la edición del archivo JS (es un poco incómodo poder editarlo así -aunque hoy en día existen herramientas online que desminifican un archivo).
 
+Con la api de jquery se pueden hacer consultas de las librerías de jquery:
+https://api.jquery.com/
+
+
 JAVASCRIPT MINIMIZADO
 _____________________
 
@@ -39,6 +43,9 @@ Suele respetarse el siguiente estándar para el nombre:
 Archivo comun: libreria.js
 
 Archivo minificado: libreria.min.js
+
+<!--JQUERY-->
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 
 La recomendación es usar el minificado, a menos que sea necesario hacer debug sobre los archivos de la librería.
 
