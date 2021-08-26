@@ -202,4 +202,14 @@ for (const producto of productos) {
     <b> $ ${producto.precio}</b></div>`);
 
 
+LIBRERÍA SWEETALERT 2 PARA USARLO EN ALERT:
+__________________________________________
+
+Librería que se usa en los alert.
+
+https://sweetalert2.github.io/#download
+
+Instalación:
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
