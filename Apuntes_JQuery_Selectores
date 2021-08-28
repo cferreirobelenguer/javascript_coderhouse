@@ -220,3 +220,42 @@ Instalación:
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
+
+
+SWEETALERT2
+___________
+
+Librería de JS y JQUERY para crear alerts de forma personalizada.
+
+
+EJEMPLO SWEETALERT2
+___________________
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <!--JQUERY-->
+	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="sweetalert2.js"></script>
+    
+
+    <script>
+    Swal.fire({title: 'Are you sure?', showCancelButton: true}).then(result => {
+  if (result.value) {
+    // handle Confirm button click
+    // result.value will contain `true` or the input value
+  } else {
+    // handle dismissals
+    // result.dismiss can be 'cancel', 'overlay', 'esc' or 'timer'
+  }
+})
+    </script>
+</body>
+</html>
