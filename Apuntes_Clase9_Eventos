@@ -388,3 +388,64 @@ function capturarEnter(e){
 window.onload=()=>{console.log("Ventana cargada")};
 
 
+
+
+ESQUEMA EVENTOS:
+________________
+
+Eventos de teclado:
+
+KeyDown--> evento de tecla hundida
+KeyUp--> Al dejar de presionar la tecla
+keyPress-->(deprecado) tecla hundida y sólo números y caracteres
+
+
+Eventos del ratón:
+
+onclick:click sobre un elemento
+onmousedown: se pulsa un botón del ratón sobre un elemento
+onmouseenter:el puntero del ratón está en el área de un elemento
+onmousemove:el puntero del ratón se está moviendo sobre un elemento
+
+EJEMPLO DE EVENTO DE RATÓN:
+___________________________
+
+function random(numeroMaximo){
+  return Math.round(Math.random()*numeroMaximo;
+}
+
+boton.addEventListener("clicl", function(event){
+  console.log(evento);
+  var randomColor=[
+    random(255),
+    random(255),
+    random(255),];
+
+document.body.style.background="rgb( "+randomColor[0]+!,"+randomColor[1]+","+randomColor[2]");
+}
+
+
+Eventos del navegador:
+
+DOMContentLoaded: La página se ha cargado
+
+Eventos propios: Crear tu propio evento.
+
+EJEMPLO DE EVENTO PROPIO
+________________________
+
+document.addEventListener('customEvent', function(evento){
+  console.log(evento);
+  console.log(evento.detail);
+ }
+ 
+ var event=new CustomEvent('cambiarFondo',{'detail':'Hola John'});
+ 
+ document.dispathEvent(event);
+
+
+
+
+
+
+
