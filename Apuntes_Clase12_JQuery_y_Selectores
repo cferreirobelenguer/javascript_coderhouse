@@ -274,5 +274,6 @@ $(function(){
     $("a").attr("href","http://www.jquery.com");
     });
     
-    
+   
+ $("img").attr("src","1.jpg");
     
