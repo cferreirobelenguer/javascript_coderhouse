@@ -245,4 +245,34 @@ for (const producto of productos) {
 
 
 
+ATRIBUTOS
+_________
 
+Podemos manipular atributos asignados a elementos HTML fácilmente a través de JQUERY: href,src, id, class, style son todos los ejemplos de atributos en HTML.
+
+El método attr() es utilizado para obtener el valor de un atributo. Por ejemplo:
+
+HTML:
+
+<a hreef="www.sololearn.com">
+    Click Here
+</a>
+
+JS:
+
+$(function(){
+
+    var val=$("a").attr("href");
+    alert(val);
+    });
+    
+   
+El método attr() también nos permite fijar un valor para un atributo especificando el mismo como segundo parámetro.
+
+$(function(){
+
+    $("a").attr("href","http://www.jquery.com");
+    });
+    
+    
+    
