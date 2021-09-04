@@ -1,0 +1,87 @@
+
+
+¿Cómo agregar un elemento a un array en JavaScript?
+______________________________________________________
+
+¿Cómo agregar un elemento a un array en JavaScript?
+
+PUSH
+____
+
+El método .push() de JavaScript es un método muy útil para agregar elementos al final de una Array o arreglo. Después de agregar un elemento al final de la Array, el método .push() devuelve la nueva longitud de la matriz.
+
+
+
+arr.push(element1, element2, etc...)
+
+El método .push() acepta tipos de datos String , Numéricos, Booleanos, Objetos, Undefined y Null.
+
+
+Strings
+
+En este ejemplo, vamos a crear una matriz de String y vamos a declarar en la variable colores. Entonces vamos a añadirle el color naranja.
+
+var colores = ['rojo', 'verde', 'amarillo', 'azul'];
+colores.push('naranja'); // Regresa: 5
+console.log(colores);  // regresa: ['rojo', 'verde', 'amarillo', 'azul', 'naranja']
+Números
+
+Aquí crearemos un arreglo tipo number llamada testScores y luego agregamos dos nuevas puntuaciones de prueba al array al mismo tiempo.
+
+var testScores = [77, 98, 81, 76];
+testScores.push(100, 71); // Regresa: 6
+console.log(testScores); // Regresa: [77, 98, 81, 76, 100, 71];
+Objetos
+
+En el ejemplo anterior, enviamos los puntajes de las pruebas a la matriz, pero eso no es muy útil para el usuario final. Sería bueno ver los nombres de los estudiantes para los cuales se obtuvieron las calificaciones, de modo que podamos hacer un seguimiento de todos ellos en un solo lugar. Agregamos un Object a nuestra matriz en su lugar.
+
+Crear una matriz de estudiantes de tipo Object.
+
+var estudiantes = [
+        {
+           nombreEstudiante: 'Billy',
+           testScore: 77
+        },
+        {
+           nombreEstudiante: 'Sandra',
+           testScore: 98
+        },
+        {
+           nombreEstudiante: 'Michelle',
+           testScore: 81
+        },
+        {
+           nombreEstudiante: 'Jason',
+           testScore: 76
+        }
+];
+A continuación, tomemos la matriz de nuestros estudiantes y agregaremos las calificaciones de Andrea y Timmy.
+
+estudiantes.push({nombreEstudiante: 'Andrea', testScore: 100}, { nombreEstudiante: 'Timmy', testScore: 71});
+
+
+EJEMPLO:
+________
+
+//Lista de productos de la tienda
+
+let carritoCompra=[ {id:1,producto:"chaqueta",precio:30,descripcion:"Chaqueta vaquera"},
+                    {id:2,producto:"leggins",precio:12.99,descripcion:"Pantalón legging tejido algodón 100%"},
+                    {id:3,producto:"abrigo",precio:50,descripcion:"Abrigo de lana"},
+                    {id:4,producto:"cazadora",precio:40,descripcion:"Cazadora de polipiel"}];
+
+
+//Ver productos con for in
+for (const i in carritoCompra) {
+    if (Object.hasOwnProperty.call(carritoCompra, i)) {
+       let element=carritoCompra[i];
+       console.log(element);
+    }
+
+  //Agregar producto que usuario quiere a carrito
+let eleccion=prompt("indica tu eleccion");
+
+if(eleccion==1){
+    carritoUsuario.push({id:1,producto:"chaqueta",precio:30,descripcion:"Chaqueta vaquera"});
+}
+console.log(carritoUsuario);
