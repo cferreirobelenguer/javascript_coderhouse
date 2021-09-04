@@ -193,6 +193,19 @@ $("#app").prepend(`<div><h3> ID: ${producto2.id}</h3>
                  <p>  Producto: ${producto2.nombre}</p>
                  <b> $ ${producto2.precio}</b></div>`);
 		 
+HTML()
+_____
+html()	Establece o devuelve el contenido de los elementos seleccionados
+El método html () establece o devuelve el contenido (innerHTML) de los elementos seleccionados.
+
+Cuando se utiliza este método para devolver contenido, devuelve el contenido del PRIMER elemento coincidente.
+
+Cuando se utiliza este método para establecer contenido, sobrescribe el contenido de TODOS los elementos coincidentes.
+
+$("button").click(function(){
+  $("p").html("Hello <b>world</b>!");
+});
+		 
 		 
 		 
 ATRIBUTOS
