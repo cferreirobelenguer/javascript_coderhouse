@@ -397,4 +397,7 @@ EJEMPLO DE FUNCIONES FLECHA CON PARÁMETROS:
 const saludar=(nom,ape)=>{alert("Buenas noches "+nom+" "+ape);}
         saludar(prompt ("Ingrese nombre"),prompt("Ingrese Apellido"));
         
-        
+  
+
+                
+               
