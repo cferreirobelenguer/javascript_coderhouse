@@ -1,5 +1,27 @@
 
 
+PASOS PARA CREAR UN CARRITO DE LA COMPRA A TRAVÉS DE ARRAYS DE OBJETOS LITERALES:
+
+
+DOCUMENTO HTML
+______________
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <tittle></tittle>
+    </head>
+    <body>
+        
+         <!--JQUERY-->
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        <script src="compra.js"></script>
+    </body>
+</html>
+
+
+DOCUMENTO JS
+_____________
 
 //CHULETAS DEL CARRITO DE LA COMPRA
 
