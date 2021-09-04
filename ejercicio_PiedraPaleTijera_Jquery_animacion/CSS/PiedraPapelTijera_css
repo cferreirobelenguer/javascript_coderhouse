@@ -1,0 +1,61 @@
+
+
+body{
+    color:rgb(31, 30, 30);
+    padding:70px;
+    margin:auto;
+}
+#encabezado{
+    background-color:rgb(31, 30, 30);
+    padding:50px;
+}
+#final{
+    background-color:rgb(31, 30, 30);
+    padding:50px;
+}
+#turnoOrdena{
+    color:rgb(31, 30, 30);
+    font-size:30px;
+    font-family:'OCR A';
+    padding:50px;
+}
+#titulo{
+    font-size:30px;
+    font-family:'OCR A';
+    padding:50px;
+}
+#reglas{
+    font-size:30px;
+    font-family:'OCR A';
+    padding:50px;
+    color:ivory;
+    background-color:rgb(31, 30, 30);
+}
+#usuario{
+    font-size:30px;
+    font-family:'OCR A';
+    padding:50px;
+}
+#ganador{
+    font-size:30px;
+    font-family:'OCR A';
+    padding:50px;
+}
+.zoom {
+    transition: transform .2s; 
+}
+
+.zoom:hover {
+    transform: scale(1.5); 
+}
+.boton_personalizado{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color:rgb(255, 255, 255);
+    border-radius: 2000px;
+    background-color:rgb(31, 30, 30);
+    border: 3px solid rgb(31, 30, 30);
+    font-family:'OCR A';
+}
