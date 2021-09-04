@@ -1,0 +1,135 @@
+
+
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <tittle></tittle>
+        <link href="estilos/piedraPapelTijeraCss.css" rel="stylesheet" type="text/css">
+        
+    </head>
+    <body>
+        <center>
+        <section id="encabezado">
+        <br>
+        <br>
+        </section>
+        <center><img src="imagenes/piedraPapelTijera.gif" width="1000" height="600"/></center>
+        
+        <br>
+        <section id="reglas">
+        <h2>Estas son las reglas del juego:</h2>
+        <br>
+        <h2>Vas a jugar contra el ordenador<br> tienes que elegir entre piedra papel o tijera</h2>
+        </section>
+        <section id="turnoOrdena">
+        <br>
+        <br>
+        <h2>El primer turno es para el ordenador</h2>
+        <br>
+        <br>
+        <center><img src="imagenes/ordenador.png" id="ordena_" width="250" height="200"/></center>
+        <center><img src="imagenes/ok.png" style="display:none" id="ok" width="100" height="100"/></center>
+        <br>
+        </section>
+        <div class="zoom">
+        <center><input type="button" id="ordenador" class="boton_personalizado" value="El ordenador elije una opción"></center>
+        </div>
+        <br>
+        
+            
+         <section id="Ordena">   
+            <br> 
+        </section>
+            
+            
+        <section id="usuario">
+        <h2>El segundo turno es para el usuario<br>recuerda que tienes que elegir una de las tres opciones</h2>
+        <br>
+        <br>
+        <center><img src="imagenes/usuario.png" id="usuario_" width="250" height="250"/></center>
+        
+        <br>
+        </section>
+        <center>
+        <br>
+      
+        <br>
+        <br>
+        <div class="zoom">
+        <button id="piedra"  class="boton_personalizado" >Opción piedra</button>
+        </div>
+        <br>
+        <section id="piedraUsuario">
+            <br>
+            <br>
+            <img src="imagenes/piedra.png" id="piedraEleccion" style="display:none" width="200" height="250"/>
+            <br>
+            <br>
+        </section>
+        <br>
+        <br>
+        <div class="zoom">
+        <button id="papel" class="boton_personalizado" >Opción papel</button>
+        </div>
+        <br>
+        <section id="papelUsuario">
+            <br>
+            <br>
+            <img src="imagenes/papel.jpg" id="papelEleccion" style="display:none" width="200" height="250"/>
+            <br>
+            <br>
+        </section>
+        <br>
+        <br>
+        <div class="zoom">
+        <button id="tijera"  class="boton_personalizado">Opción tijera</button>
+        </div>
+        <br>
+        <section id="tijeraUsuario">
+            <br>
+            <br>
+            <img src="imagenes/tijera.png" id="tijerasEleccion" style="display:none" width="200" height="250"/>
+            <br>
+            <br>
+        </section>
+        <section id="decisionUsuario">
+            <br>
+        </section>
+        <br>
+        <br>
+    </center>
+        <section id="ganador">
+            <h2>¡Toca saber el ganador!</h2>
+            <br>
+            <br>
+        </section>
+        
+        <div class="zoom">
+        <button id="ganadortotal"   class="boton_personalizado">Ver ganador</button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <img src="imagenes/ganaste.png" id="ganaste_" style="display:none" width="300" height="200"/>
+        <img src="imagenes/perdiste.png" id="perdiste_" style="display:none" width="250" height="200"/>
+        <img src="imagenes/perdiste.png" id="empate_" style="display:none" width="250" height="200"/>
+        <section id="ganador2">
+        <br>
+        </section>
+        <section id="final">
+        <br>
+        <br>
+        </section>
+    </center>
+        <!--JQUERY-->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+        <!--SCRIPT JS-->
+        <script src="Clase13_CarolinaFerreiro_DesafioComple.js"></script>
+
+       
+    </body>
+</html>
