@@ -1,0 +1,325 @@
+
+
+//Declaración de variables
+
+let eleccionordenador="";
+let eleccionusuario="";
+let imagen;
+
+//Elección ordenador de forma aleatoria utilizando random
+//Al pulsar el botón se crea una animación encadenada, usamos fadeOut para ocultar el logo del ordenador y a su vez
+//se muestra el tick de verificación para indicar que el ordenador ha hecho su elección
+
+$("#ordenador").click(function(){
+    $("#ordena_").fadeOut(2000);
+    imagen=false;
+
+    if(imagen==false){
+        $("#ok").fadeIn(2000);
+        
+    }
+    let ordenaElige=Math.floor(Math.random()*(3-1+1)+1);
+
+    if(ordenaElige==1){
+        
+        eleccionordenador="PIEDRA";
+        $("#Ordena").html(" ");
+        $("#Ordena").css("fontSize","30px")
+        $("#Ordena").css("fontFamily",'OCR A')
+        $("#Ordena").append(`<h2>El ordena ha elegido ${eleccionordenador}</h2>` )
+        
+
+
+    }else if(ordenaElige==2){
+        
+        eleccionordenador="PAPEL";
+        $("#Ordena").html(" ");
+        $("#Ordena").css("fontSize","30px")
+        $("#Ordena").css("fontFamily",'OCR A')
+        $("#Ordena").append(`<h2>El ordena ha elegido ${eleccionordenador}</h2>` )
+        
+        
+
+
+    }else if(ordenaElige==3){
+        
+        eleccionordenador="TIJERA";
+        $("#Ordena").html(" ");
+        $("#Ordena").css("fontSize","30px")
+        $("#Ordena").css("fontFamily",'OCR A')
+        $("#Ordena").append(`<h2>El ordena ha elegido ${eleccionordenador}</h2>` )
+        
+    }
+})
+
+//Usamos fadeToggle para mostrar y ocultar piedra en caso de que el usuario lo elija o cierre le ventana 
+//para elegir otra opción
+
+$("#piedra").click(function(){
+
+    $("#usuario_").fadeOut(2000);
+    imagen=false;
+    
+    
+
+
+    eleccionusuario="PIEDRA";
+    $("#decisionUsuario").html(" ");
+    $("#decisionUsuario").css("fontSize","30px")
+    $("#decisionUsuario").css("fontFamily",'OCR A')
+    $("#decisionUsuario").prepend(`<h2>El usuario ha elegido piedra</h2>`);
+   
+    $("#piedraEleccion").fadeToggle(2000,function(){
+
+    if($("#piedra").html()=="Opción piedra"){
+
+        $("#piedra").html("Cerrar ventana");
+        
+    }else{
+        $("#piedra").html("Opción piedra");
+    }
+    });
+    
+   
+})
+
+
+//Usamos fadeToggle para mostrar y ocultar papel en caso de que el usuario lo elija o cierre le ventana 
+//para elegir otra opción
+
+$("#papel").click(function(){
+
+    $("#usuario_").fadeOut(2000);
+    imagen=false;
+    
+    
+
+    eleccionusuario="PAPEL";
+    $("#decisionUsuario").html(" ");
+    $("#decisionUsuario").css("fontSize","30px")
+    $("#decisionUsuario").css("fontFamily",'OCR A')
+    $("#decisionUsuario").prepend(`<h2>El usuario ha elegido papel</h2>`);
+    
+    
+    $("#papelEleccion").fadeToggle(2000,function(){
+
+    if($("#papel").html()=="Opción papel"){
+
+        $("#papel").html("Cerrar ventana");
+        
+    }else{
+        $("#papel").html("Opción papel");
+    }
+    });
+    
+    
+})
+
+//Usamos fadeToggle para mostrar y ocultar tijera en caso de que el usuario lo elija o cierre le ventana 
+//para elegir otra opción
+
+$("#tijera").click(function(){
+
+    $("#usuario_").fadeOut(2000);
+    imagen=false;
+    
+    
+
+    eleccionusuario="TIJERA";
+
+    $("#decisionUsuario").html(" ");
+    $("#decisionUsuario").css("fontSize","30px")
+    $("#decisionUsuario").css("fontFamily",'OCR A')
+    $("#decisionUsuario").prepend(`<h2>El usuario ha elegido tijera`);
+    
+    $("#tijerasEleccion").fadeToggle(2000,function(){
+
+    if($("#tijera").html()=="Opción tijera"){
+
+        $("#tijera").html("Cerrar ventana");
+        
+    }else{
+        $("#tijera").html("Opción tijera");
+    }
+    });
+    
+    
+})
+
+
+$("#ganadortotal").click(function(){
+    
+    if( (eleccionordenador=="PIEDRA")&(eleccionusuario=="PIEDRA")){
+        
+        $("#ganador2").html(" ");
+        $("#empate_").fadeToggle(2000,function(){
+
+            if($("#ganadortotal").html()=="Ver ganador"){
+        
+                $("#ganadortotal").html("Cerrar ventana");
+                
+            }else{
+                $("#ganadortotal").html("Ver ganador");
+            }
+            });
+        $("#ganador2").css("fontSize","30px")
+        $("#ganador2").css("fontFamily",'OCR A')
+        $("#ganador2").append(`<br><h2>Has empatado con el ordenador<br>vuelve a intentarlo</h2><br>`)
+        
+
+    }else if((eleccionordenador=="PIEDRA")&(eleccionusuario=="PAPEL")){
+        
+        $("#ganador2").html(" ");
+        $("#ganaste_").fadeToggle(2000,function(){
+
+            if($("#ganadortotal").html()=="Ver ganador"){
+        
+                $("#ganadortotal").html("Cerrar ventana");
+                
+            }else{
+                $("#ganadortotal").html("Ver ganador");
+            }
+            });
+        $("#ganador2").css("fontSize","30px")
+        $("#ganador2").css("fontFamily",'OCR A')
+        $("#ganador2").append(`<br><h2>¡Enhorabuena<br>has ganado!</h2><br>`)
+        
+        
+        
+    }else if((eleccionordenador=="PIEDRA")&(eleccionusuario=="TIJERA")){
+
+        $("#ganador2").html(" ");
+        $("#perdiste_").fadeToggle(2000,function(){
+
+            if($("#ganadortotal").html()=="Ver ganador"){
+        
+                $("#ganadortotal").html("Cerrar ventana");
+                
+            }else{
+                $("#ganadortotal").html("Ver ganador");
+            }
+            });
+        $("#ganador2").css("fontSize","30px")
+        $("#ganador2").css("fontFamily",'OCR A')
+        $("#ganador2").append(`<br><h2>¡Ops<br>ha ganado el ordena!</h2><br>`)
+        
+        
+        
+    }else if((eleccionordenador=="PAPEL")&(eleccionusuario=="PIEDRA")){
+       
+        $("#ganador2").html(" ");
+        $("#perdiste_").fadeToggle(2000,function(){
+
+            if($("#ganadortotal").html()=="Ver ganador"){
+        
+                $("#ganadortotal").html("Cerrar ventana");
+                
+            }else{
+                $("#ganadortotal").html("Ver ganador");
+            }
+            });
+        $("#ganador2").css("fontSize","30px")
+        $("#ganador2").css("fontFamily",'OCR A')
+        $("#ganador2").append(`<br><h2>¡Ops<br>ha ganado el ordena!</h2><br>`)
+        
+        
+        
+    }else if((eleccionordenador=="PAPEL")&(eleccionusuario=="PAPEL")){
+
+        $("#ganador2").html(" ");
+        $("#empate_").fadeToggle(2000,function(){
+
+            if($("#ganadortotal").html()=="Ver ganador"){
+        
+                $("#ganadortotal").html("Cerrar ventana");
+                
+            }else{
+                $("#ganadortotal").html("Ver ganador");
+            }
+            });
+        $("#ganador2").css("fontSize","30px")
+        $("#ganador2").css("fontFamily",'OCR A')
+        $("#ganador2").append(`<br><h2>Has empatado con el ordenador<br>vuelve a intentarlo</h2><br>`)
+       
+        
+    }else if((eleccionordenador=="PAPEL")&(eleccionusuario=="TIJERA")){
+
+        $("#ganador2").html(" ");
+        $("#ganaste_").fadeToggle(2000,function(){
+
+            if($("#ganadortotal").html()=="Ver ganador"){
+        
+                $("#ganadortotal").html("Cerrar ventana");
+                
+            }else{
+                $("#ganadortotal").html("Ver ganador");
+            }
+            });
+        $("#ganador2").css("fontSize","30px")
+        $("#ganador2").css("fontFamily",'OCR A')
+        $("#ganador2").append(`<br><h2>¡Enhorabuena<br>has ganado!</h2><br>`)
+        
+       
+        
+    }else if((eleccionordenador=="TIJERA")&(eleccionusuario=="PIEDRA")){
+        
+        $("#ganador2").html(" ");
+        $("#ganaste_").fadeToggle(2000,function(){
+
+            if($("#ganadortotal").html()=="Ver ganador"){
+        
+                $("#ganadortotal").html("Cerrar ventana");
+                
+            }else{
+                $("#ganadortotal").html("Ver ganador");
+            }
+            });
+        $("#ganador2").css("fontSize","30px")
+        $("#ganador2").css("fontFamily",'OCR A')
+        $("#ganador2").append(`<br><h2>¡Enhorabuena<br>has ganado!</h2><br>`)
+        
+        
+        
+    }else if((eleccionordenador=="TIJERA")&(eleccionusuario=="PAPEL")){ 
+        
+        $("#ganador2").html(" ");
+
+        $("#perdiste_").fadeToggle(2000,function(){
+
+            if($("#ganadortotal").html()=="Ver ganador"){
+        
+                $("#ganadortotal").html("Cerrar ventana");
+                
+            }else{
+                $("#ganadortotal").html("Ver ganador");
+            }
+            });
+        $("#ganador2").css("fontSize","30px")
+        $("#ganador2").css("fontFamily",'OCR A')
+        $("#ganador2").append(`<br><h2>¡Ops<br>ha ganado el ordena!</h2><br>`)
+        
+        
+        
+    }else if((eleccionordenador=="TIJERA")&(eleccionusuario=="TIJERA")){  
+        
+        $("#ganador2").html(" ");
+        $("#empate_").fadeToggle(2000,function(){
+
+            if($("#ganadortotal").html()=="Ver ganador"){
+        
+                $("#ganadortotal").html("Cerrar ventana");
+                
+            }else{
+                $("#ganadortotal").html("Ver ganador");
+            }
+            });
+        $("#ganador2").css("fontSize","30px")
+        $("#ganador2").css("fontFamily",'OCR A')
+        $("#ganador2").append(`<br><h2>Has empatado con el ordenador<br>vuelve a intentarlo</h2><br>`)
+        
+        
+        
+
+    }
+});
+
