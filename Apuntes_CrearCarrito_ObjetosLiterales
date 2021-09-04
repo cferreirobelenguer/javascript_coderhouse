@@ -1,0 +1,54 @@
+
+
+
+//CHULETAS DEL CARRITO DE LA COMPRA
+
+let productoElegido;
+let carritoUsuario=[];
+
+
+//Lista de productos de la tienda
+
+let carritoCompra=[ {id:1,producto:"chaqueta",precio:30,descripcion:"Chaqueta vaquera"},
+                    {id:2,producto:"leggins",precio:12.99,descripcion:"Pantalón legging tejido algodón 100%"},
+                    {id:3,producto:"abrigo",precio:50,descripcion:"Abrigo de lana"},
+                    {id:4,producto:"cazadora",precio:40,descripcion:"Cazadora de polipiel"}];
+
+
+//Ver productos con for in
+
+for (const i in carritoCompra) {
+    if (Object.hasOwnProperty.call(carritoCompra, i)) {
+       let element=carritoCompra[i];
+       console.log(element);
+    }
+
+    //ESTABLECER UNA CARTA DE LOS PRODUCTOS
+   for(const productos of carritoCompra){
+
+       //CON JQUERY
+   /* $("#contenedor").append(`<h1>Id: ${productos.id}<br>
+                            Producto:${productos.producto}<br>
+                            Precio:${productos.precio}<br>
+                            Descripción:${productos.descripcion}`)*/
+
+      //CON DOM
+        let contenedor = document.createElement("div");                 
+        contenedor.innerHTML=`<h3> ID: ${productos.id}</h3>
+                               <p> Producto: ${productos.producto}</p>
+                               <p> $ ${productos.descripcion}</p>
+                               <b> $ ${productos.precio}</b>`;
+       
+        document.body.appendChild(contenedor);
+    }
+
+}
+
+//Agregar producto que usuario quiere a carrito
+
+let eleccion=prompt("indica tu eleccion");
+
+if(eleccion==1){
+    carritoUsuario.push({id:1,producto:"chaqueta",precio:30,descripcion:"Chaqueta vaquera"});
+}
+console.log(carritoUsuario);
