@@ -193,6 +193,37 @@ $("#myForm").submit(function (e) {
 });
 
 
+EVENT.TARGET
+____________
+
+Event.target
+La propiedad target de la interfaz del event.currentTarget es una referencia al objeto en el cual se lanzo el evento. Es diferente de event.currentTarget donde el controlador de eventos (event handler) es llamado durante la fase de bubbling or capturing del evento.
+
+Sintaxis
+const theTarget = algunEvento.target
+Ejemplo
+La propiedad event.target  puede ser usada para implementar una delegación del evento.
+
+// Crear una lista
+const ul = document.createElement('ul');
+document.body.appendChild(ul);
+
+const li1 = document.createElement('li');
+const li2 = document.createElement('li');
+ul.appendChild(li1);
+ul.appendChild(li2);
+
+function hide(e){
+  // e.target se refiere elemento clickado <li>
+  // Esto es diferente de e.currentTarget, que se referiría al padre <ul> en este contexto
+  e.target.style.visibility = 'hidden';
+}
+
+// Incluir el 'listener' a la lista
+// Se ejecutará cuando se haga click en cada <li>
+ul.addEventListener('click', hide, false);
+
+
 
 MÉTODO TRIGGER
 ______________
@@ -245,35 +276,3 @@ for (const producto of productos) {
 
 
 
-ATRIBUTOS
-_________
-
-Podemos manipular atributos asignados a elementos HTML fácilmente a través de JQUERY: href,src, id, class, style son todos los ejemplos de atributos en HTML.
-
-El método attr() es utilizado para obtener el valor de un atributo. Por ejemplo:
-
-HTML:
-
-<a hreef="www.sololearn.com">
-    Click Here
-</a>
-
-JS:
-
-$(function(){
-
-    var val=$("a").attr("href");
-    alert(val);
-    });
-    
-   
-El método attr() también nos permite fijar un valor para un atributo especificando el mismo como segundo parámetro.
-
-$(function(){
-
-    $("a").attr("href","http://www.jquery.com");
-    });
-    
-   
- $("img").attr("src","1.jpg");
-    
