@@ -249,4 +249,17 @@ por qué y cómo emplear las llamadas asíncronas  para enviar y obtener datos d
  
  
  
+ EJEMPLO DEL MÉTODO POST DE AJAX CON JQUERY:
+ ___________________________________________
  
+   //método post para enviar el formulario a la siguiente api
+      const envio = "https://jsonplaceholder.typicode.com/posts";
+      const infoPost = { email: texto };
+      $.post(envio, infoPost, (respuesta, estado) => {
+        if (estado === "success") {
+          $("#miFormulario").prepend(`<div>
+            Hemos guardado tu email ${respuesta.email} satisfactoriamente
+            </div><br>`);
+        }
+      });
+
