@@ -1,9 +1,23 @@
 //CLASE 1 -Las bases
 
 
-DECLARACIÓN DE VARIABLES: Se utiliza var o let para declarar una variable. En caso de que sea constante o estática se usa const.
+DECLARACIÓN DE VARIABLES: 
+_________________________
 
-/*Variables
+Se utiliza var o let para declarar una variable. En caso de que sea constante o estática se usa const.
+
+
+var : Se usa como variable global
+let: se usa como variable local
+const: se usa como constante, variable estática.
+
+En javascript las variables no se inicializan, si a una variable no se le pone valor se queda como undefined.
+
+=== Se usa para comparar si dos variables son iguales en tipo y valor.
+== Se usa para comparar si dos variables son iguales en valor.
+
+
+
 Vamos a aprender ahora nuestras primeras palabras reservadas. Los términos a continuación se utilizan para crear elementos con valores asociados, a los cuales los conocemos por el nombre de variables.
 Para crear una variable podemos usar la palabra “var”, seguida por el nombre que quiero especificar para la misma, acompañada de un punto y coma (;), si no vamos a asociar ningún valor al momento de crear la variable.
 También existen otras palabras para crear variables desde la versión ES6 de JavaScript, como “let” que, por así decirlo, es equivalente a “var” en la nueva versión, así como  “const”, la cual se usa para crear una variable cuyo valor no va a cambiar nunca.
