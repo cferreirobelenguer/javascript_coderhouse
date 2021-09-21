@@ -162,6 +162,7 @@ Sirven para realizar expresiones condicionales todo lo complejas que deseemos. E
 Nota: Por supuesto, los operadores condicionales sirven también para realizar expresiones en las que se comparan otros tipos de datos. Nada impide comparar dos cadenas, para ver si son iguales o distintas, por ejemplo. Incluso podríamos comparar boleanos.
 Los operadores condicionales se utilizan en las expresiones condicionales para tomas de decisiones. Como estas expresiones condicionales serán objeto de estudio más adelante será mejor describir los operadores condicionales más adelante. De todos modos aquí podemos ver la tabla de operadores condicionales.
 
+=== Comprueba si dos valores son iguales en tipo y valor
 == Comprueba si dos valores son iguales
 != Comprueba si dos valores son distintos
 > Mayor que, devuelve true si el primer operando es mayor que el segundo
