@@ -225,7 +225,21 @@ for (const producto of productos) {
     console.log(producto.producto);
 }
 
+Otro ejemplo:
  
+ 
+var propiedadesDeNombreiNUSUAL={"":"UN STRING VACIO","!":"BANG!"};
+
+//invocas la clave 
+console.log(propiedadesDeNombreiNUSUAL["!"]);
+
+var auto={algunosAutos:{a:"Sabb","b":"Jeep"},7:"Mazda"};
+
+//Se puede invocar la clave por el punto o con corchete
+console.log(auto.algunosAutos.b);//Jeep
+console.log(auto[7]);
+
+
 Por cada ciclo del for...of  obtenemos la referencia a un elemento del array en orden, es decir que accedemos de uno en uno a todos los elementos del array. 
 El bucle termina una vez iterado el último de la lista. La referencia al elemento actual la tenemos en la variable creada antes de la palabra reservada of. 
 Como es un array de objetos, podemos acceder a su estructura con las dos formas de acceso: identifcador.propiedad (Ejemplo producto.id) o identificador[“propiedad”] 
